@@ -115,7 +115,13 @@ export const BuyAssetsForm = () => {
   };
 
   const goBack = () => history.push(ROUTE_PATHS.DASHBOARD.path);
-
+  return ( <ContentPanel
+    onBack={goBack}
+    backBtnText={translateRaw('DASHBOARD')}
+    heading={translateRaw('DASHBOARD_ACTIONS_BUY_TITLE')}
+  >
+    <InlineMessage className="SendAssetsForm">Coming soon</InlineMessage>
+  </ContentPanel>);
   return (
     <ContentPanel
       onBack={goBack}
