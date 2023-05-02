@@ -3,7 +3,7 @@ import { default as txConfig } from './txConfig.json';
 import { default as txConfigDeploy } from './txConfigDeploy.json';
 import { default as txConfigEIP1559 } from './txConfigEIP1559.json';
 
-export { fAssets, fStoreAssets, fRopDAI, fDAI } from './assets';
+export { fAssets, fStoreAssets, fDAI } from './assets';
 export { fAccount, fAccounts, fDWAccounts } from './account';
 export { fContacts } from './contacts';
 export { fNetwork, fNetworks } from './network';
@@ -25,8 +25,6 @@ export { unknownReport, scamReport, verifiedReport, loadingReport } from './ptxr
 // Non-Web3 ERC20 Tx Items
 export { default as fERC20NonWeb3TxConfigJSON } from './erc20NonWeb3TxConfig.json';
 export {
-  fERC20NonWeb3TxConfig,
-  fETHNonWeb3TxConfig,
   fApproveErc20TxConfig,
   fTokenMigrationTxConfig
 } from './txConfig';

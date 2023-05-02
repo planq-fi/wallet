@@ -205,6 +205,7 @@ const SwapAssets = (props: Props) => {
 
   const checkNetwork = (n: Network) => DEX_NETWORKS.includes(n.id);
   return (<Box mt="20px" mb="1em">Coming soon</Box>)
+
   return (
     <>
       <Box mt="20px" mb="1em">

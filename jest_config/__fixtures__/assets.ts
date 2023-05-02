@@ -8,21 +8,8 @@ import {
   LENDUUID,
   REPV1UUID,
   REPV2UUID,
-  XDAI_NETWORK,
-  XDAIUUID
 } from '@config';
 import { ExtendedAsset, StoreAsset, TTicker, TUuid } from '@types';
-
-export const fRopDAI: ExtendedAsset = {
-  uuid: '2783a9ff-d6f1-5c9e-bbab-3b74be91adb1' as TUuid,
-  name: 'RopDAI',
-  decimal: 18,
-  ticker: 'RopDAI' as TTicker,
-  networkId: 'Ropsten',
-  contractAddress: '0xad6d458402f60fd3bd25163575031acdce07538d',
-  isCustom: true,
-  type: 'erc20'
-};
 
 export const fDAI: ExtendedAsset = {
   uuid: DAIUUID as TUuid,
@@ -167,14 +154,6 @@ export const fAssets = [
     type: 'erc20'
   },
   {
-    uuid: XDAIUUID,
-    name: 'xDAI',
-    type: 'base',
-    networkId: XDAI_NETWORK,
-    isCustom: false,
-    ticker: 'xDAI'
-  },
-  {
     uuid: '54ceb912-56e8-590e-874a-a752a6e0650a',
     name: 'Smart Chain (Smart Chain)',
     ticker: 'BNB',
@@ -183,7 +162,6 @@ export const fAssets = [
     isCustom: false
   },
   fDAI,
-  fRopDAI
 ] as ExtendedAsset[];
 
 export const fStoreAssets = [
