@@ -146,7 +146,7 @@ export const supportUsTray: INavTray = {
     {
       type: 'external',
       title: translateRaw('NAVIGATION_BUY_ETH'),
-      link: EXT_URLS.COINBASE_REFERRAL.url,
+      link: EXT_URLS.OSMOSIS_REFERRAL.url,
       icon: 'nav-coinbase'
     },
     {

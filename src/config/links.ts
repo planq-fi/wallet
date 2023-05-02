@@ -103,8 +103,8 @@ const affiliateLinks: IExtUrl[] = [
     url: 'https://unstoppabledomains.com/r/mycrypto' as TURL
   },
   {
-    name: 'COINBASE_REFERRAL',
-    url: 'https://coinbase-consumer.sjv.io/RVmkN' as TURL
+    name: 'OSMOSIS_REFERRAL',
+    url: 'https://frontier.osmosis.zone/?from=OSMO&to=PLQ' as TURL
   },
   {
     name: 'POOLTOGETHER_REFERRAL',

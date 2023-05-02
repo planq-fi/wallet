@@ -46,7 +46,7 @@ export const DEX_TRADE_EXPIRATION = 31; // in seconds
 
 export const MOONPAY_PUBLIC_API_KEY = 'pk_live_Fi1kufUL8EflbE49vbZRKa71S2a4Y1D';
 export const MOONPAY_API_QUERYSTRING = `?apiKey=${MOONPAY_PUBLIC_API_KEY}&colorCode=%23163150`;
-export const BUY_MYCRYPTO_WEBSITE = 'https://buy.mycrypto.com' as TURL;
+export const BUY_MYCRYPTO_WEBSITE = 'https://wallet.planq.finance/buy' as TURL;
 export const MOONPAY_SIGNER_API = 'https://moonpay.mycryptoapi.com/sign';
 export const UNISWAP_UNI_CLAIM_API = 'https://uni.mycryptoapi.com/claims';
 export const UNISWAP_TOKEN_DISTRIBUTOR = '0x090D4613473dEE047c3f2706764f49E0821D256e';
