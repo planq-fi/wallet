@@ -44,11 +44,11 @@ export const ANALYTICS_SITE_ID_DEV = 11;
 // this will be changed when we figure out networks
 export const DEFAULT_NETWORK_FOR_FALLBACK = 'Planq';
 
-export const DEFAULT_NETWORK: NetworkId = 'Ethereum';
+export const DEFAULT_NETWORK: NetworkId = 'Planq';
 
 export const POLYGON_NETWORK: NetworkId = 'MATIC';
 
-export const DEFAULT_NETWORK_TICKER = 'ETH' as TTicker;
+export const DEFAULT_NETWORK_TICKER = 'PLQ' as TTicker;
 
 export const DEFAULT_ASSET_DECIMAL = 18;
 
