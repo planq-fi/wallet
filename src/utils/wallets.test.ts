@@ -11,7 +11,7 @@ import {
 
 describe('getAccountsByNetwork', () => {
   it('filters correctly by default', () => {
-    expect(getAccountsByNetwork(fAccounts, 'Ropsten')).toHaveLength(4);
+    expect(getAccountsByNetwork(fAccounts, 'Planq')).toHaveLength(4);
   });
 });
 

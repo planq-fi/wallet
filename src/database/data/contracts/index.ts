@@ -6,8 +6,8 @@ import ETC from './etc.json';
 import Ethereum from './eth.json';
 import EXP from './exp.json';
 import Goerli from './goerli.json';
+import Planq from './planq.json';
 import Rinkeby from './rinkeby.json';
-import Ropsten from './ropsten.json';
 import RSK from './rsk.json';
 import UBQ from './ubq.json';
 
@@ -21,7 +21,7 @@ export const Contracts: Contracts = {
   Ethereum,
   EXP,
   Rinkeby,
-  Ropsten,
+  Planq,
   Goerli,
   RSK,
   UBQ,

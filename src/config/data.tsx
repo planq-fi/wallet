@@ -30,7 +30,7 @@ export const PROTECTED_TX_MIN_AMOUNT = 5; // 5 dollars minimum fee
 
 export const gasEstimateCacheTime = 60000;
 
-export const SUPPORT_EMAIL = 'support@mycrypto.com';
+export const SUPPORT_EMAIL = 'support@planq.finance';
 export const LATEST_NEWS_URL = 'https://blog.mycrypto.com' as TURL;
 export const CRYPTOSCAMDB = 'https://cryptoscamdb.org';
 
@@ -66,9 +66,9 @@ export enum Theme {
 
 export type ThemeType = 'dark' | 'light';
 
-export const FAUCET_NETWORKS: NetworkId[] = ['Ropsten', 'Rinkeby', 'Kovan', 'Goerli'];
+export const FAUCET_NETWORKS: NetworkId[] = [];
 
-export const ETHEREUM_NETWORKS: NetworkId[] = ['Ethereum', 'Ropsten', 'Rinkeby', 'Kovan', 'Goerli'];
+export const ETHEREUM_NETWORKS: NetworkId[] = ['Ethereum'];
 
 export const SUPPORTED_VIDEO_EXTENSIONS = ['mov', 'mp4', 'webm', 'ogv'];
 

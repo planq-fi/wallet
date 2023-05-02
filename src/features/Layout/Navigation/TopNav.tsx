@@ -43,7 +43,7 @@ export const TopNav = ({
           </Box>
           <Icon
             type="logo-mycrypto-text-blue"
-            width="147px"
+            width="64px"
             style={{ marginRight: '35px', marginLeft: '35px' }}
           />
         </>

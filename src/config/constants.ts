@@ -42,11 +42,9 @@ export const ANALYTICS_SITE_ID_PROD = 17;
 export const ANALYTICS_SITE_ID_DEV = 11;
 
 // this will be changed when we figure out networks
-export const DEFAULT_NETWORK_FOR_FALLBACK = 'ropsten';
+export const DEFAULT_NETWORK_FOR_FALLBACK = 'Planq';
 
 export const DEFAULT_NETWORK: NetworkId = 'Ethereum';
-
-export const XDAI_NETWORK: NetworkId = 'xDAI';
 
 export const POLYGON_NETWORK: NetworkId = 'MATIC';
 

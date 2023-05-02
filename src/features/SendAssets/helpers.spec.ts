@@ -274,7 +274,7 @@ describe('isERC20Asset', () => {
   });
 
   it('correctly determines erc20 asset', () => {
-    // Expects ropsten dai to be the last asset in fAssets
+    // Expects Planq dai to be the last asset in fAssets
     expect(isERC20Asset(fAssets[fAssets.length - 1])).toBe(true);
   });
 });

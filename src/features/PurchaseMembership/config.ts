@@ -10,9 +10,7 @@ import {
   DEFAULT_NETWORK,
   ETHUUID,
   POLYGON_NETWORK,
-  USDCPolygonUUID,
-  XDAI_NETWORK,
-  XDAIUUID
+  USDCPolygonUUID
 } from '@config';
 import { translateRaw } from '@translations';
 import { NetworkId, TAddress } from '@types';
@@ -59,9 +57,6 @@ export enum IMembershipId {
   sixmonths = 'sixmonths',
   twelvemonths = 'twelvemonths',
   lifetime = 'lifetime',
-  xdaionemonth = 'xdaionemonth',
-  xdaitwelvemonths = 'xdaitwelvemonths',
-  xdailifetime = 'xdailifetime',
   polygononemonth = 'polygononemonth',
   polygontwelvemonths = 'polygontwelvemonths',
   polygonlifetime = 'polygonlifetime'
@@ -80,19 +75,6 @@ export const MEMBERSHIP_CONFIG: IMembershipConfigObject = {
     durationInDays: 30,
     discountNotice: '',
     networkId: DEFAULT_NETWORK
-  },
-
-  xdaionemonth: {
-    title: translateRaw('MEMBERSHIP_MONTH', { $duration: '1' }),
-    key: IMembershipId.xdaionemonth,
-    contractAddress: '0xcB3BB4CCe15b492E7fdD7cb9a3835C034714207A',
-    description: '',
-    icon: onemonthIcon,
-    price: '10',
-    assetUUID: XDAIUUID,
-    durationInDays: 30,
-    discountNotice: '',
-    networkId: XDAI_NETWORK
   },
 
   polygononemonth: {
@@ -149,19 +131,6 @@ export const MEMBERSHIP_CONFIG: IMembershipConfigObject = {
     networkId: DEFAULT_NETWORK
   },
 
-  xdaitwelvemonths: {
-    title: translateRaw('MEMBERSHIP_MONTHS', { $duration: '12' }),
-    key: IMembershipId.xdaitwelvemonths,
-    contractAddress: '0xf97f516Cc0700a4Ce9Ee64D488F744f631e1525d',
-    description: '',
-    icon: twelveMonthsIcon,
-    price: '100',
-    assetUUID: XDAIUUID,
-    durationInDays: 366,
-    discountNotice: translateRaw('MEMBERSHIP_DISCOUNT', { $percentage: '~16.6%' }),
-    networkId: XDAI_NETWORK
-  },
-
   polygontwelvemonths: {
     title: translateRaw('MEMBERSHIP_MONTHS', { $duration: '12' }),
     key: IMembershipId.polygontwelvemonths,
@@ -186,19 +155,6 @@ export const MEMBERSHIP_CONFIG: IMembershipConfigObject = {
     durationInDays: 36500,
     discountNotice: translateRaw('MEMBERSHIP_LIFETIME_DESC'),
     networkId: DEFAULT_NETWORK
-  },
-
-  xdailifetime: {
-    title: translateRaw('MEMBERSHIP_LIFETIME_EMOJI'),
-    key: IMembershipId.xdailifetime,
-    contractAddress: '0xEB24302c4c78963e1b348b274aa9cC6fcbe80527',
-    description: '',
-    icon: lifetimeIcon,
-    price: '999',
-    assetUUID: XDAIUUID,
-    durationInDays: 36500,
-    discountNotice: translateRaw('MEMBERSHIP_LIFETIME_DESC'),
-    networkId: XDAI_NETWORK
   },
 
   polygonlifetime: {

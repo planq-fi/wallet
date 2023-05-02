@@ -610,7 +610,7 @@ describe('makeTxConfigFromSignedTx', () => {
       asset: fAssets[1],
       baseAsset: fAssets[1],
       from: address,
-      networkId: 'Ropsten',
+      networkId: 'Planq',
       rawTransaction: {
         chainId: 3,
         data: '0x',
@@ -636,7 +636,7 @@ describe('makeTxConfigFromSignedTx', () => {
       asset: fAssets[1],
       baseAsset: fAssets[1],
       from: address,
-      networkId: 'Ropsten',
+      networkId: 'Planq',
       rawTransaction: {
         chainId: 3,
         data: '0x',

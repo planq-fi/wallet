@@ -19,48 +19,38 @@ export const DOWNLOAD_MYCRYPTO_LINK = 'https://download.mycrypto.com';
 
 export const SUBSCRIBE_NEWSLETTER_LINK = 'http://eepurl.com/ggh4r5';
 
-export const MYCRYPTO_PROD_LINK = 'https://app.mycrypto.com';
+export const MYCRYPTO_PROD_LINK = 'https://wallet.planq.finance';
 
 export const MYCRYPTO_FAUCET_LINK = `${MYCRYPTO_PROD_LINK}/faucet`;
 
 export const socialMediaLinks: Link[] = [
   {
-    link: 'https://twitter.com/mycrypto',
+    link: 'https://twitter.com/planqfoundation',
     text: 'twitter',
     icon: null
   },
   {
-    link: 'https://www.facebook.com/mycryptoHQ/',
-    text: 'facebook',
-    icon: null
-  },
-  {
-    link: 'https://medium.com/@mycrypto',
+    link: 'https://medium.com/@planq',
     text: 'medium',
     icon: null
   },
   {
-    link: 'https://www.linkedin.com/company/mycrypto',
-    text: 'linkedin',
-    icon: null
-  },
-  {
-    link: 'https://github.com/MyCryptoHQ',
+    link: 'https://github.com/planq-network',
     text: 'github',
     icon: null
   },
   {
-    link: 'https://www.reddit.com/r/mycrypto/',
+    link: 'https://www.reddit.com/r/planq_network',
     text: 'reddit',
     icon: null
   },
   {
-    link: 'https://discord.gg/VSaTXEA',
+    link: 'https://discord.gg/planq-network',
     text: 'discord',
     icon: null
   },
   {
-    link: 'https://t.me/mycryptohq',
+    link: 'https://t.me/planqnetwork',
     text: 'telegram',
     icon: SocialTelegramIcon
   }
@@ -126,7 +116,7 @@ const affiliateLinks: IExtUrl[] = [
   },
   {
     name: 'SWAP_REFERRAL',
-    url: 'https://app.mycrypto.com/swap?utm_medium=mycrypto&utm_source=dashboard&utm_campaign=swap' as TURL
+    url: 'https://wallet.planq.finance/swap?utm_medium=mycrypto&utm_source=dashboard&utm_campaign=swap' as TURL
   },
   {
     name: 'GRIDPLUS_REFERRAL',

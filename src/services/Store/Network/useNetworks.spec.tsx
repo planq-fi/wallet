@@ -38,8 +38,8 @@ describe('useNetworks', () => {
   it('deleteNetwork() calls destroy', () => {
     const mockDispatch = mockUseDispatch();
     const { result } = renderUseNetworks({ networks: fNetworks });
-    result.current.deleteNetwork('Ropsten');
-    expect(mockDispatch).toHaveBeenCalledWith(actionWithPayload('Ropsten'));
+    result.current.deleteNetwork('Planq');
+    expect(mockDispatch).toHaveBeenCalledWith(actionWithPayload('Planq'));
   });
 
   it('getNetworkById() finds network with id', () => {

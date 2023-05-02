@@ -34,7 +34,7 @@ ProviderHandler.prototype.getTokenBalance = jest.fn().mockResolvedValue('150');
 ProviderHandler.prototype.getRawBalance = jest.fn().mockResolvedValue('150');
 ProviderHandler.fetchProvider = jest.fn().mockResolvedValue({} as FallbackProvider);
 
-const RopstenNoEthScanNetworkId = 'ROPSTEN_NO_ETHSCAN' as NetworkId;
+const PlanqNoEthScanNetworkId = 'Planq_NO_ETHSCAN' as NetworkId;
 
 describe('getBaseAssetBalancesForAddresses', () => {
   it('gets result for getBaseAssetBalancesForAddresses with one address on an ethscan network', async () => {
@@ -50,7 +50,7 @@ describe('getBaseAssetBalancesForAddresses', () => {
   it('gets result for getBaseAssetBalancesForAddresses with one address on a non-ethscan network', async () => {
     const balances = await getBaseAssetBalancesForAddresses(
       ['0xfE5443FaC29fA621cFc33D41D1927fd0f5E0bB7c' as TAddress],
-      { ...fNetworks[1], id: RopstenNoEthScanNetworkId }
+      { ...fNetworks[1], id: PlanqNoEthScanNetworkId }
     );
     const expected = {
       '0xfE5443FaC29fA621cFc33D41D1927fd0f5E0bB7c': bigify('150')
@@ -74,8 +74,8 @@ describe('getTokenBalancesForAddresses', () => {
 
   it('gets result for getTokenBalancesForAddresses with one address on a non-ethscan network', async () => {
     const balances = await getTokenBalancesForAddresses(
-      [{ ...fRopDAI, networkId: RopstenNoEthScanNetworkId }],
-      { ...fNetworks[1], id: RopstenNoEthScanNetworkId as NetworkId },
+      [{ ...fRopDAI, networkId: PlanqNoEthScanNetworkId }],
+      { ...fNetworks[1], id: PlanqNoEthScanNetworkId as NetworkId },
       ['0xfE5443FaC29fA621cFc33D41D1927fd0f5E0bB7c' as TAddress]
     );
     const expected = {
@@ -100,8 +100,8 @@ describe('getSingleTokenBalanceForAddresses', () => {
 
   it('gets result for getSingleTokenBalanceForAddresses with one address on a non-ethscan network', async () => {
     const balances = await getSingleTokenBalanceForAddresses(
-      { ...fRopDAI, networkId: RopstenNoEthScanNetworkId },
-      { ...fNetworks[1], id: RopstenNoEthScanNetworkId as NetworkId },
+      { ...fRopDAI, networkId: PlanqNoEthScanNetworkId },
+      { ...fNetworks[1], id: PlanqNoEthScanNetworkId as NetworkId },
       ['0xfE5443FaC29fA621cFc33D41D1927fd0f5E0bB7c' as TAddress]
     );
     const expected = {

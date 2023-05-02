@@ -15,7 +15,7 @@ const exampleTXResult = {
   maxFeePerGas: '1000000000',
   maxPriorityFeePerGas: '1000000000',
   hash: '0x5049c0847681402db2c303847f2f66ac7f3a6caf63119b676374d5781b8d11e9',
-  network: 'ropsten',
+  network: 'Planq',
   nonce: 39,
   to: fAccount.address,
   value: '1'
@@ -47,7 +47,7 @@ describe('Faucet helpers', () => {
         asset: fAssets[1],
         baseAsset: fAssets[1],
         from: '0xa500B2427458D12Ef70dd7b1E031ef99d1cc09f7',
-        networkId: 'Ropsten',
+        networkId: 'Planq',
         rawTransaction: {
           chainId: 3,
           data: '0x',

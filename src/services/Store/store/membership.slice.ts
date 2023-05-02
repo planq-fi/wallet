@@ -2,7 +2,7 @@ import { createAction, createSelector, createSlice, PayloadAction } from '@redux
 import { fromUnixTime, isAfter, max } from 'date-fns';
 import { call, put, select, takeLatest } from 'redux-saga/effects';
 
-import { POLYGON_NETWORK, XDAI_NETWORK } from '@config';
+import { POLYGON_NETWORK } from '@config';
 import {
   MEMBERSHIP_CONFIG,
   MembershipState,
@@ -19,7 +19,7 @@ import { selectDefaultNetwork, selectNetwork } from './network.slice';
 import { AppState } from './root.reducer';
 
 export type MembershipErrorState = {
-  [key in 'Ethereum' | 'MATIC' | 'xDAI']: boolean;
+  [key in 'Ethereum' | 'MATIC' ]: boolean;
 };
 
 export const initialState = {
@@ -112,7 +112,6 @@ export function* fetchMembershipsWorker({ payload }: PayloadAction<IAccount[] | 
   );
 
   const ethereumNetwork: Network = yield select(selectDefaultNetwork);
-  const xdaiNetwork: Network = yield select(selectNetwork(XDAI_NETWORK));
   const polygonNetwork: Network = yield select(selectNetwork(POLYGON_NETWORK));
 
   const membershipFetchConfig = [
@@ -121,12 +120,6 @@ export function* fetchMembershipsWorker({ payload }: PayloadAction<IAccount[] | 
         .filter(isEthereumAccount)
         .map((a) => a.address),
       network: ethereumNetwork
-    },
-    {
-      accounts: (payload ?? membershipNetworkAccounts)
-        .filter((a) => isAccountInNetwork(a, XDAI_NETWORK))
-        .map((a) => a.address),
-      network: xdaiNetwork
     },
     {
       accounts: (payload ?? membershipNetworkAccounts)

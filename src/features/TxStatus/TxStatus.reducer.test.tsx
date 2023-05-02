@@ -12,7 +12,7 @@ describe('TxStatusReducer', () => {
   describe('SET_NETWORK', () => {
     it('can update network with payload', () => {
       const payload = DEFAULT_NETWORK;
-      const prevState = { networkId: 'Ropsten' };
+      const prevState = { networkId: 'Planq' };
 
       const newState = dispatch({ type: txStatusReducer.actionTypes.SET_NETWORK, payload })(
         prevState
@@ -88,7 +88,7 @@ describe('TxStatusReducer', () => {
   });
   describe('CLEAR_FORM', () => {
     it('can clear form values', () => {
-      const prevState = { networkId: 'Ropsten', txHash: TX_HASH };
+      const prevState = { networkId: 'Planq', txHash: TX_HASH };
 
       const newState = dispatch({ type: txStatusReducer.actionTypes.CLEAR_FORM })(prevState);
 

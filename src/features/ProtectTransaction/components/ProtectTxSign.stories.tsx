@@ -9,10 +9,10 @@ import { noOp } from '@utils';
 import ProtectTxProvider from '../ProtectTxProvider';
 import { ProtectTxSign } from './ProtectTxSign';
 
-const ropstenId: NetworkId = 'Ropsten';
+const PlanqId: NetworkId = 'Planq';
 const network: Network = {
-  ...NETWORKS_CONFIG[ropstenId],
-  nodes: NODES_CONFIG[ropstenId]
+  ...NETWORKS_CONFIG[PlanqId],
+  nodes: NODES_CONFIG[PlanqId]
 } as any;
 
 const sampleTxConfig = {

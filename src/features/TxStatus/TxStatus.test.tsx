@@ -35,7 +35,7 @@ describe('TxStatus', () => {
   });
 
   test('Can render error state for invalid hash', async () => {
-    const { getByText, container } = renderComponent('/tx-status?network=Ropsten');
+    const { getByText, container } = renderComponent('/tx-status?network=Planq');
     const selector = translateRaw('TX_STATUS');
     expect(getByText(selector)).toBeInTheDocument();
     fireEvent.change(container.querySelector('input[name="txhash"]')!, {
@@ -50,7 +50,7 @@ describe('TxStatus', () => {
   });
 
   test('Can render error state for non existant hash', async () => {
-    const { getByText, container } = renderComponent('/tx-status?network=Ropsten');
+    const { getByText, container } = renderComponent('/tx-status?network=Planq');
     const selector = translateRaw('TX_STATUS');
     expect(getByText(selector)).toBeInTheDocument();
     fireEvent.change(container.querySelector('input[name="txhash"]')!, {
@@ -79,7 +79,7 @@ describe('TxStatus', () => {
 
   test('When information given in query string handles fetching correctly', async () => {
     const { getByText, getAllByText } = renderComponent(
-      `/tx-status?hash=${TX_HASH}&network=Ropsten`
+      `/tx-status?hash=${TX_HASH}&network=Planq`
     );
     const selector = translateRaw('TX_STATUS');
     expect(getByText(selector)).toBeInTheDocument();

@@ -17,7 +17,7 @@ jest.mock('@services/WalletService/walletService', () => {
   return {
     WalletFactory: {
       ['WEB3']: {
-        init: async () => [new Web3Wallet('0xE8E0F5417B272f2a1C24419bd2cF6B3F584c6b9A', 'Ropsten')]
+        init: async () => [new Web3Wallet('0xE8E0F5417B272f2a1C24419bd2cF6B3F584c6b9A', 'Planq')]
       }
     },
     getWallet: jest.fn()

@@ -45,10 +45,10 @@ describe('DeployContractsFlow', () => {
 
     await selectEvent.openMenu(getByText(DEFAULT_NETWORK, { exact: false }));
 
-    expect(getByText('Ropsten')).toBeInTheDocument();
-    fireEvent.click(getByText('Ropsten'));
+    expect(getByText('Planq')).toBeInTheDocument();
+    fireEvent.click(getByText('Planq'));
 
-    await waitFor(() => expect(getByText('Ropsten')).toBeInTheDocument());
+    await waitFor(() => expect(getByText('Planq')).toBeInTheDocument());
 
     await selectEvent.openMenu(
       getByText(translateRaw('ACCOUNT_SELECTION_PLACEHOLDER'), { exact: false })

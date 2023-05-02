@@ -87,12 +87,12 @@ describe('ContactLookupField', () => {
     input!.focus();
     fireEvent.change(input!, { target: { value: address } });
     input!.blur();
-    const uuid = generateDeterministicAddressUUID('Ropsten', address);
+    const uuid = generateDeterministicAddressUUID('Planq', address);
     expect(mockDispatch).toHaveBeenCalledWith(
       actionWithPayload({
         address,
         label: 'Recipient 1',
-        network: 'Ropsten',
+        network: 'Planq',
         notes: '',
         uuid
       })
@@ -110,12 +110,12 @@ describe('ContactLookupField', () => {
     fireEvent.click(input!);
     fireEvent.change(input!, { target: { value: ens } });
     await waitFor(() => fireEvent.keyDown(input!, enter));
-    const uuid = generateDeterministicAddressUUID('Ropsten', address);
+    const uuid = generateDeterministicAddressUUID('Planq', address);
     expect(mockDispatch).toHaveBeenCalledWith(
       actionWithPayload({
         address,
         label: 'eth',
-        network: 'Ropsten',
+        network: 'Planq',
         notes: '',
         uuid
       })

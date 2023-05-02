@@ -25,7 +25,7 @@ test('it handles multiple sub-domains', () => {
 });
 
 test('it handles multiple rc hostname', () => {
-  const hostname = 'rc.app.mycrypto.com';
+  const hostname = 'rc.wallet.planq.finance';
   const res = getRootDomain(hostname);
   expect(res).toEqual('mycrypto.com');
 });

@@ -38,7 +38,7 @@ FaucetService.solveChallenge = jest.fn(() =>
       maxFeePerGas: '1000000000',
       maxPriorityFeePerGas: '1000000000',
       hash: '0x5049c0847681402db2c303847f2f66ac7f3a6caf63119b676374d5781b8d11e9',
-      network: 'ropsten',
+      network: 'Planq',
       nonce: 39,
       to: '0x0000000000000000000000000000000000000000',
       value: '1'

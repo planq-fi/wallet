@@ -1,7 +1,7 @@
 import { call } from 'redux-saga-test-plan/matchers';
 import { expectSaga, mockAppState } from 'test-utils';
 
-import { DEFAULT_NETWORK, POLYGON_NETWORK, XDAI_NETWORK } from '@config';
+import { DEFAULT_NETWORK, POLYGON_NETWORK } from '@config';
 import { MembershipStatus } from '@features/PurchaseMembership/config';
 import { accountWithMembership, fAccount, fNetwork, fNetworks } from '@fixtures';
 import { MembershipApi } from '@services/ApiService';
@@ -105,14 +105,6 @@ describe('MembershipsSlice', () => {
 describe('fetchMembershipsSaga()', () => {
   const res = [
     {
-      address: '0xfeac75a09662396283f4bb50f0a9249576a81866',
-      memberships: [
-        { expiry: '1590743978', type: 'onemonth' },
-        { expiry: '1609372800', type: 'lifetime' }
-      ],
-      networkId: XDAI_NETWORK
-    } as MembershipStatus,
-    {
       address: accountWithMembership,
       memberships: [
         { expiry: '1590743978', type: 'onemonth' },
@@ -132,7 +124,6 @@ describe('fetchMembershipsSaga()', () => {
 
   const accounts = [
     { address: accountWithMembership, networkId: DEFAULT_NETWORK, wallet: WalletId.LEDGER_NANO_S },
-    { address: '0xfeac75a09662396283f4bb50f0a9249576a81866', networkId: XDAI_NETWORK },
     { ...fAccount, networkId: POLYGON_NETWORK }
   ] as StoreAccount[];
 
@@ -140,9 +131,6 @@ describe('fetchMembershipsSaga()', () => {
 
   const ethereumAccounts = accounts
     .filter(({ networkId }) => networkId === DEFAULT_NETWORK)
-    .map(({ address }) => address);
-  const xdaiAccounts = accounts
-    .filter(({ networkId }) => networkId === XDAI_NETWORK)
     .map(({ address }) => address);
   const polygonAccounts = accounts
     .filter(({ networkId }) => networkId === POLYGON_NETWORK)
@@ -152,10 +140,6 @@ describe('fetchMembershipsSaga()', () => {
     {
       accounts: ethereumAccounts,
       network: fNetworks[0]
-    },
-    {
-      accounts: xdaiAccounts,
-      network: fNetworks[2]
     },
     {
       accounts: polygonAccounts,

@@ -9,15 +9,15 @@ import NetworkNodes from './NetworkNodes';
 const emptyNetworks: INetwork[] = [];
 
 const ethereumId: NetworkId = 'Ethereum';
-const ropstenId: NetworkId = 'Ropsten';
+const PlanqId: NetworkId = 'Planq';
 const someNetworks: INetwork[] = ([
   {
     ...NETWORKS_CONFIG[ethereumId],
     nodes: NODES_CONFIG[ethereumId]
   },
   {
-    ...NETWORKS_CONFIG[ropstenId],
-    nodes: NODES_CONFIG[ropstenId]
+    ...NETWORKS_CONFIG[PlanqId],
+    nodes: NODES_CONFIG[PlanqId]
   }
 ] as unknown) as INetwork[];
 
