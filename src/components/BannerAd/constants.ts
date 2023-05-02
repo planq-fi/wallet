@@ -31,7 +31,7 @@ export const ads = [
     name: 'Coinbase',
     srcDesktop: coinbaseDesktop,
     srcMobile: coinbaseMobile,
-    url: EXT_URLS.COINBASE_REFERRAL.url
+    url: EXT_URLS.OSMOSIS_REFERRAL.url
   },
   {
     name: 'Quicknode',
