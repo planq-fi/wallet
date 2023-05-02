@@ -38,7 +38,9 @@ export default function BannerAd() {
   const randomIndex = Math.floor(Math.random() * ads.length);
   const ad = ads[randomIndex];
   const isExternalLink = ad.url.startsWith('http');
-
+  return(
+    <AdWrapper></AdWrapper>
+  )
   return (
     <AdWrapper>
       <LinkApp href={ad.url} isExternal={isExternalLink}>
