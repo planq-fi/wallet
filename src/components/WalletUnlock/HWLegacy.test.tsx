@@ -28,9 +28,9 @@ const getComponent = () => {
 };
 
 describe('HWLegacy', () => {
-  // @ts-expect-error Bad mock please ignore
+  // @ts-ignore Bad mock please ignore
   delete window.location;
-  // @ts-expect-error Bad mock please ignore
+  // @ts-ignore Bad mock please ignore
   window.location = Object.assign(new URL('https://example.org'), {
     ancestorOrigins: '',
     assign: jest.fn(),

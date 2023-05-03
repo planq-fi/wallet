@@ -19,6 +19,7 @@ import { Network, TAddress, TTicker } from '@types';
 import { bigify, buildAddressUrl, fromWei } from '@utils';
 
 import { DPathSelector } from './DPathSelector';
+import { BigNumber } from 'bignumber.js';
 
 const { GREY_LIGHTEST, BLUE_LIGHTEST, GREY_DARK } = COLORS;
 
@@ -235,7 +236,7 @@ export function HDWalletsClass({
       return getBaseAssetBalancesForAddresses(addressesToLookup, network).then(
         (balanceMapData: BalanceMap) => {
           const walletsWithBalances: HDWalletData[] = wallets.map((wallet) => {
-            const balance = balanceMapData[wallet.address] || 0;
+            const balance = balanceMapData[wallet.address] || new BigNumber(0);
             return {
               ...wallet,
               value: balance

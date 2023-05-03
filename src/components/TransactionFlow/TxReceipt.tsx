@@ -112,7 +112,7 @@ const TxReceipt = ({
   const displayTxReceipt = userTx ?? receipt!;
 
   const timestamp = displayTxReceipt.timestamp ?? 0;
-  const txStatus = displayTxReceipt.status ?? 0;
+  const txStatus = displayTxReceipt.status ?? ITxStatus.UNKNOWN;
 
   const network = getNetworkById(txConfig.networkId);
 

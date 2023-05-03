@@ -25,6 +25,7 @@ const defaultProps = {
 
 const getComponent = () => {
   const { store } = createStore(
+    //@ts-ignore
     mockAppState({ networks: APP_STATE.networks, connections: { wallets: {} } })
   );
   return simpleRender(
@@ -40,9 +41,9 @@ describe('Ledger', () => {
     jest.setTimeout(1200000);
   });
 
-  // @ts-expect-error Bad mock please ignore
+  // @ts-ignore Bad mock please ignore
   delete window.location;
-  // @ts-expect-error Bad mock please ignore
+  // @ts-ignore Bad mock please ignore
   window.location = Object.assign(new URL('https://example.org'), {
     ancestorOrigins: '',
     assign: jest.fn(),

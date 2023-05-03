@@ -23,6 +23,7 @@ const defaultProps: React.ComponentProps<typeof Trezor> = {
 
 const getComponent = () => {
   const { store } = createStore(
+    // @ts-ignore
     mockAppState({ networks: APP_STATE.networks, connections: { wallets: {} } })
   );
   return simpleRender(

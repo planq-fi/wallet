@@ -2,7 +2,7 @@ import { ComponentProps } from 'react';
 
 import { mockAppState, simpleRender } from 'test-utils';
 
-import { fAccount, fAccounts, fAssets, fRopDAI } from '@fixtures';
+import { fAccount, fAccounts, fAssets, fDAI } from '@fixtures';
 import { noOp, truncate } from '@utils';
 
 import { LAST_CHANGED_AMOUNT } from '../types';
@@ -13,7 +13,7 @@ const defaultProps: ComponentProps<typeof SwapAssets> = {
   account: fAccounts[0],
   assets: fAssets,
   fromAsset: fAssets[0],
-  toAsset: fRopDAI,
+  toAsset: fDAI,
   fromAmount: '1',
   toAmount: '10',
   isCalculatingFromAmount: false,
@@ -49,6 +49,6 @@ describe('SwapAssets', () => {
     const { getAllByText } = getComponent(defaultProps);
     expect(getAllByText(truncate(fAccount.address))).toBeDefined();
     expect(getAllByText(fAssets[0].ticker, { exact: false })).toBeDefined();
-    expect(getAllByText(fRopDAI.ticker, { exact: false })).toBeDefined();
+    expect(getAllByText(fDAI.ticker, { exact: false })).toBeDefined();
   });
 });

@@ -1,4 +1,4 @@
-import { DEFAULT_NETWORK, POLYGON_NETWORK, XDAI_NETWORK } from '@config';
+import { DEFAULT_NETWORK, POLYGON_NETWORK } from '@config';
 import { IMembershipId, MembershipStatus } from '@features/PurchaseMembership/config';
 import {
   accountWithMembership,
@@ -38,7 +38,7 @@ describe('MembershipApi', () => {
         networkId: DEFAULT_NETWORK,
         wallet: WalletId.LEDGER_NANO_S
       },
-      { address: '0xfeac75a09662396283f4bb50f0a9249576a81866', networkId: XDAI_NETWORK },
+      { address: '0xfeac75a09662396283f4bb50f0a9249576a81866', networkId: POLYGON_NETWORK },
       { ...fAccount, networkId: POLYGON_NETWORK }
     ] as StoreAccount[];
     const polygonNetwork = { ...fNetwork, id: POLYGON_NETWORK };
@@ -47,7 +47,7 @@ describe('MembershipApi', () => {
       .filter(({ networkId }) => networkId === DEFAULT_NETWORK)
       .map(({ address }) => address);
     const xdaiAccounts = accounts
-      .filter(({ networkId }) => networkId === XDAI_NETWORK)
+      .filter(({ networkId }) => networkId === POLYGON_NETWORK)
       .map(({ address }) => address);
     const polygonAccounts = accounts
       .filter(({ networkId }) => networkId === POLYGON_NETWORK)
@@ -86,7 +86,7 @@ describe('getMembershipContracts()', () => {
       '0xf97f516Cc0700a4Ce9Ee64D488F744f631e1525d',
       '0xEB24302c4c78963e1b348b274aa9cC6fcbe80527'
     ];
-    expect(getMembershipContracts(XDAI_NETWORK)).toStrictEqual(expected);
+    expect(getMembershipContracts(POLYGON_NETWORK)).toStrictEqual(expected);
   });
 
   it('can getMembershipContracts for the ethereum network', () => {

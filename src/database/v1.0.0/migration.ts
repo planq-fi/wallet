@@ -31,7 +31,8 @@ export function migrate(prev: LocalStorage, curr: LocalStorage) {
 
   const updateAccountAssetsUUID = ({ networkId, assets = [], ...rest }: IAccount) => {
     const getTicker = (uuid: TUuid) => {
-      //@ts-expect-error: cannot use Brand<string, "UUID"> to index Record<Brand<string, "UUID">, Asset> !?
+      // : cannot use Brand<string, "UUID"> to index Record<Brand<string, "UUID">, Asset> !?
+      // @ts-surpress
       const asset = prev.assets[uuid] || {};
       return asset && asset.ticker ? asset.ticker : undefined;
     };
@@ -53,9 +54,11 @@ export function migrate(prev: LocalStorage, curr: LocalStorage) {
   };
 
   // Merge accounts
+
   const accounts = Object.assign(
     {},
     curr.accounts,
+    // @ts-ignore
     map(updateAccountAssetsUUID, (prev.accounts as R.Functor<IAccount>) || {})
   );
 

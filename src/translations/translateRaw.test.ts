@@ -18,7 +18,7 @@ describe('translateRaw', () => {
   });
 
   it('handles errors', () => {
-    // @ts-expect-error Intentional wrong type
+    // @ts-ignore Intentional wrong type
     expect(translateRaw('ADDRESS_BOOK_UNDO_REMOVE_OVERLAY_TEXT', { $label: undefined })).toBe(
       'ADDRESS_BOOK_UNDO_REMOVE_OVERLAY_TEXT'
     );

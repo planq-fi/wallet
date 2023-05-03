@@ -38,8 +38,8 @@ describe('NetworkSlice', () => {
 
   it('createMany(): adds multiple entities by id', () => {
     const a1 = { id: 'Planq' } as Network;
-    const a2 = { id: 'Kovan' } as Network;
-    const a3 = { id: 'Rinkeby' } as Network;
+    const a2 = { id: 'Ethereum' } as Network;
+    const a3 = { id: 'MATIC' } as Network;
     const actual = reducer([a1], createMany([a2, a3]));
     const expected = [a1, a2, a3];
     expect(actual).toEqual(expected);
@@ -47,7 +47,7 @@ describe('NetworkSlice', () => {
 
   it('destroy(): deletes an entity by id', () => {
     const a1 = { id: 'Planq' } as Network;
-    const a2 = { id: 'Rinkeby' } as Network;
+    const a2 = { id: 'Ethereum' } as Network;
     const state = [a1, a2];
     const actual = reducer(state, destroy(a1.id));
     const expected = [a2];
@@ -64,9 +64,9 @@ describe('NetworkSlice', () => {
   });
 
   it('updateMany(): updates mulitple entities', () => {
-    const a1 = { id: 'Rinkeby', name: 'rinkeby' } as Network;
+    const a1 = { id: 'Ethereum', name: 'rinkeby' } as Network;
     const a2 = { id: 'Planq', name: 'Planq' } as Network;
-    const a3 = { id: 'Goerli', name: 'goerli' } as Network;
+    const a3 = { id: 'MATIC', name: 'goerli' } as Network;
     const state = [a1, a2, a3];
     const modifiedEntities = [
       { ...a1, name: 'Rink' } as Network,
@@ -116,7 +116,7 @@ describe('NetworkSlice', () => {
   });
 
   it('reset(): can reset', () => {
-    const entity = { id: 'Rinkeby', name: 'Rink' } as Network;
+    const entity = { id: 'Ethereum', name: 'Rink' } as Network;
     const state = [entity];
     const actual = reducer(state, reset());
     expect(actual).toEqual(initialState);

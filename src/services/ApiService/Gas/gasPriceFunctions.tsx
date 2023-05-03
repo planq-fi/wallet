@@ -59,11 +59,11 @@ export async function fetchEIP1559PriceEstimates(network: Network) {
 export type UniversalGasEstimationResult =
   | {
       gasPrice: string; // Gwei
-      maxFeePerGas: undefined;
-      maxPriorityFeePerGas: undefined;
+      maxFeePerGas?: undefined;
+      maxPriorityFeePerGas?: undefined;
     }
   | {
-      gasPrice: undefined;
+      gasPrice?: undefined;
       maxFeePerGas: string; // Gwei
       maxPriorityFeePerGas: string; // Gwei
     };

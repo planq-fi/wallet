@@ -9,6 +9,7 @@ export interface FaucetErrorResponse extends FaucetResponse {
 
 export interface FaucetChallengeResponse {
   success: true;
+  message?: string;
   result: {
     id: string;
     challenge: string;
@@ -17,6 +18,7 @@ export interface FaucetChallengeResponse {
 
 export interface FaucetSolvedChallengeResponse {
   success: true;
+  message?: string;
   result: {
     chainId: number;
     data: string;

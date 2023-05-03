@@ -1,7 +1,7 @@
 import mockAxios from 'jest-mock-axios';
 
 import { ETHUUID } from '@config';
-import { fAccount, fAssets, fNetwork, fNetworks, fRopDAI, fSwapQuote } from '@fixtures';
+import { fAccount, fAssets, fNetwork, fNetworks, fDAI, fSwapQuote } from '@fixtures';
 import { fetchUniversalGasPriceEstimate } from '@services/ApiService/Gas';
 import {
   ITxData,
@@ -32,7 +32,7 @@ describe('SwapFlow', () => {
       const promise = DexService.instance.getOrderDetailsFrom(
         { ...fNetwork, supportsEIP1559: false },
         fAccount,
-        fRopDAI,
+        fDAI,
         fAssets[0],
         '1'
       );
@@ -72,7 +72,7 @@ describe('SwapFlow', () => {
       const promise = DexService.instance.getOrderDetailsFrom(
         { ...fNetwork, supportsEIP1559: true },
         { ...fAccount, wallet: WalletId.LEDGER_NANO_S_NEW },
-        fRopDAI,
+        fDAI,
         fAssets[0],
         '1'
       );

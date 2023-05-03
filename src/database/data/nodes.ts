@@ -30,6 +30,20 @@ export const NODES_CONFIG: { [key in NetworkId]: StaticNodeConfig[] } = {
       disableByDefault: false
     }
   ],
+  Ropsten: [
+    {
+      name: NetworkUtils.makeNodeName('Ropsten', 'infura'),
+      type: NodeType.INFURA,
+      service: 'Infura',
+      url: `https://ropsten.infura.io/v3/${INFURA_API_KEY}`
+    },
+    {
+      name: NetworkUtils.makeNodeName('Ropsten', 'ethscan'),
+      type: NodeType.ETHERSCAN,
+      service: 'Etherscan',
+      url: 'https://api-ropsten.etherscan.io/api'
+    }
+  ],
   MATIC: [
     {
       name: NetworkUtils.makeNodeName('MATIC', 'maticvigil'),

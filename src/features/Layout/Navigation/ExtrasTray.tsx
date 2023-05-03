@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
-import { Box, Icon, LinkApp, Text } from '@components';
-import { ROUTE_PATHS } from '@config';
+import { Box, Icon, /*LinkApp,*/ Text } from '@components';
+//import { ROUTE_PATHS } from '@config';
 import { SPACING } from '@theme';
 import { translateRaw } from '@translations';
 import { useClickAway } from '@vendor';
@@ -48,21 +48,6 @@ export const ExtrasTray = ({ isMobile, closeTray }: { isMobile: boolean; closeTr
         <Subscribe />
       </Box>
       <LinkSet isMobile={isMobile} />
-      <LinkApp href={ROUTE_PATHS.DOWNLOAD_DESKTOP_APP.path}>
-        <Box backgroundColor="BLUE_DARK_SLATE" variant="rowCenter" py={SPACING.BASE}>
-          <Text
-            fontSize="14px"
-            mb={0}
-            mr={SPACING.SM}
-            fontWeight={400}
-            textTransform="uppercase"
-            color="WHITE"
-          >
-            {translateRaw('NAVIGATION_DOWNLOAD_APPS')}
-          </Text>
-          <Icon type="nav-desktop" width="20px" />
-        </Box>
-      </LinkApp>
     </Box>
   );
 };

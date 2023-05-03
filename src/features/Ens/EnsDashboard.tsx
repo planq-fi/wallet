@@ -32,7 +32,20 @@ const StyledLayout = styled.div`
 export default function EnsDashboard() {
   const ensOwnershipRecords = useSelector(getENSRecords);
   const isEnsFetched = useSelector(getENSFetched);
-
+  return (<StyledLayout>
+    <DashboardWrapper>
+      <DashboardSubHeader as="h2" className="Dashboard-desktop-top-left-heading">
+        {translateRaw('ENS_DASHBOARD_HEADER')}
+      </DashboardSubHeader>
+      <DashboardPanel
+        heading={translateRaw('ENS_MY_DOMAINS_TABLE_HEADER')}
+        >
+          <Box ml="1em" mt="20px" mb="1em">
+            Coming soon
+          </Box>
+      </DashboardPanel>
+    </DashboardWrapper>
+  </StyledLayout>)
   return (
     <StyledLayout>
       <DashboardWrapper>

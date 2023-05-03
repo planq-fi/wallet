@@ -59,7 +59,8 @@ export const getEstimatedGasFee = ({
   if (tradeGasLimit && gas?.estimate.maxFeePerGas) {
     const { avgFee } = calculateMinMaxFee({
       baseFee: gas.baseFee,
-      ...gas.estimate,
+      maxFeePerGas: gas?.estimate.maxFeePerGas,
+      maxPriorityFeePerGas: gas?.estimate.maxPriorityFeePerGas,
       gasLimit:
         tradeGasLimit &&
         bigify(tradeGasLimit)

@@ -2,7 +2,7 @@ import { ComponentProps } from 'react';
 
 import { mockAppState, simpleRender } from 'test-utils';
 
-import { fAccount, fAccounts, fAssets, fRopDAI, fTxParcels } from '@fixtures';
+import { fAccount, fAccounts, fAssets, fDAI, fTxParcels } from '@fixtures';
 import { bigify, noOp, truncate } from '@utils';
 
 import { LAST_CHANGED_AMOUNT } from '../types';
@@ -12,7 +12,7 @@ const defaultProps: ComponentProps<typeof ConfirmSwap> = {
   account: fAccounts[0],
   flowConfig: {
     fromAsset: fAssets[0],
-    toAsset: fRopDAI,
+    toAsset: fDAI,
     lastChangedAmount: LAST_CHANGED_AMOUNT.FROM,
     fromAmount: bigify(1),
     toAmount: bigify(100),
@@ -33,6 +33,6 @@ describe('ConfirmSwap', () => {
   test('it renders a single tx', async () => {
     const { getAllByText } = getComponent(defaultProps);
     expect(getAllByText(truncate(fAccount.address))).toBeDefined();
-    expect(getAllByText(fRopDAI.ticker, { exact: false })).toBeDefined();
+    expect(getAllByText(fDAI.ticker, { exact: false })).toBeDefined();
   });
 });

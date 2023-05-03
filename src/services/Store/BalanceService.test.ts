@@ -2,7 +2,7 @@ import { FallbackProvider } from '@ethersproject/providers';
 import { getEtherBalances, getTokenBalances } from '@mycrypto/eth-scan';
 import BigNumber from 'bignumber.js';
 
-import { fAssets, fNetworks, fRopDAI } from '@fixtures';
+import { fAssets, fNetworks, fDAI } from '@fixtures';
 import { ProviderHandler } from '@services/EthService';
 import { NetworkId, TAddress } from '@types';
 import { bigify } from '@utils';
@@ -61,12 +61,12 @@ describe('getBaseAssetBalancesForAddresses', () => {
 
 describe('getTokenBalancesForAddresses', () => {
   it('gets result for getTokenBalancesForAddresses with one address on an ethscan network', async () => {
-    const balances = await getTokenBalancesForAddresses([fRopDAI], fNetworks[1], [
+    const balances = await getTokenBalancesForAddresses([fDAI], fNetworks[1], [
       '0xfE5443FaC29fA621cFc33D41D1927fd0f5E0bB7c' as TAddress
     ]);
     const expected = {
       '0xfE5443FaC29fA621cFc33D41D1927fd0f5E0bB7c': {
-        [fRopDAI.contractAddress as string]: bigify('1000000000000000000')
+        [fDAI.contractAddress as string]: bigify('1000000000000000000')
       }
     } as BalanceMap<BalanceMap<BigNumber>>;
     expect(balances).toStrictEqual(expected);
@@ -74,13 +74,13 @@ describe('getTokenBalancesForAddresses', () => {
 
   it('gets result for getTokenBalancesForAddresses with one address on a non-ethscan network', async () => {
     const balances = await getTokenBalancesForAddresses(
-      [{ ...fRopDAI, networkId: PlanqNoEthScanNetworkId }],
+      [{ ...fDAI, networkId: PlanqNoEthScanNetworkId }],
       { ...fNetworks[1], id: PlanqNoEthScanNetworkId as NetworkId },
       ['0xfE5443FaC29fA621cFc33D41D1927fd0f5E0bB7c' as TAddress]
     );
     const expected = {
       '0xfE5443FaC29fA621cFc33D41D1927fd0f5E0bB7c': {
-        [fRopDAI.contractAddress as string]: bigify('150')
+        [fDAI.contractAddress as string]: bigify('150')
       }
     } as BalanceMap<BalanceMap<BigNumber>>;
     expect(balances).toStrictEqual(expected);
@@ -89,7 +89,7 @@ describe('getTokenBalancesForAddresses', () => {
 
 describe('getSingleTokenBalanceForAddresses', () => {
   it('gets result for getSingleTokenBalanceForAddresses with one address on an ethscan network', async () => {
-    const balances = await getSingleTokenBalanceForAddresses(fRopDAI, fNetworks[1], [
+    const balances = await getSingleTokenBalanceForAddresses(fDAI, fNetworks[1], [
       '0xfE5443FaC29fA621cFc33D41D1927fd0f5E0bB7c' as TAddress
     ]);
     const expected = {
@@ -100,7 +100,7 @@ describe('getSingleTokenBalanceForAddresses', () => {
 
   it('gets result for getSingleTokenBalanceForAddresses with one address on a non-ethscan network', async () => {
     const balances = await getSingleTokenBalanceForAddresses(
-      { ...fRopDAI, networkId: PlanqNoEthScanNetworkId },
+      { ...fDAI, networkId: PlanqNoEthScanNetworkId },
       { ...fNetworks[1], id: PlanqNoEthScanNetworkId as NetworkId },
       ['0xfE5443FaC29fA621cFc33D41D1927fd0f5E0bB7c' as TAddress]
     );
@@ -127,7 +127,7 @@ describe('getAssetBalance', () => {
 
   it('gets result for getAssetBalance when asset type is erc20', async () => {
     const balances = await getAssetBalance({
-      asset: fRopDAI,
+      asset: fDAI,
       network: fNetworks[1],
       addresses: ['0xfE5443FaC29fA621cFc33D41D1927fd0f5E0bB7c' as TAddress]
     });

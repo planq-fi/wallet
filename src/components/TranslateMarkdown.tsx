@@ -8,7 +8,7 @@ interface Props {
   source: string;
 }
 
-//@ts-expect-error bad typing on props
+//@ts-ignore bad typing on props
 const Link = (props) => <LinkApp isExternal={true} {...props} />;
 
 const disallowed = ['html'];

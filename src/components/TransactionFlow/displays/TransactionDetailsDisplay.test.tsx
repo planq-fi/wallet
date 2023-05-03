@@ -11,7 +11,7 @@ import {
   fAssets,
   fETHWeb3TxResponse,
   fNetwork,
-  fRopDAI,
+  fDAI,
   fTxConfig,
   fTxConfigEIP1559
 } from '@fixtures';
@@ -24,7 +24,7 @@ import { constructSenderFromTxConfig } from '../helpers';
 
 const defaultProps: ComponentProps<typeof TransactionDetailsDisplay> = {
   baseAsset: fAssets[0],
-  asset: fRopDAI,
+  asset: fDAI,
   assetAmount: '1.0',
   value: '0',
   nonce: '50',
@@ -49,7 +49,7 @@ describe('TransactionDetailsDisplay', () => {
     const { getAllByText, container, getByTestId } = getComponent(defaultProps);
     fireEvent.click(container.querySelector('button')!);
     expect(getAllByText(truncate(fAccount.address))).toBeDefined();
-    expect(getAllByText(fRopDAI.ticker, { exact: false })).toBeDefined();
+    expect(getAllByText(fDAI.ticker, { exact: false })).toBeDefined();
     expect(getAllByText(translateRaw('PENDING_STATE'))).toBeDefined();
     expect(getByTestId('PENDING')).toBeDefined();
   });
@@ -65,7 +65,7 @@ describe('TransactionDetailsDisplay', () => {
     });
     fireEvent.click(container.querySelector('button')!);
     expect(getAllByText(truncate(fAccount.address))).toBeDefined();
-    expect(getAllByText(fRopDAI.ticker, { exact: false })).toBeDefined();
+    expect(getAllByText(fDAI.ticker, { exact: false })).toBeDefined();
     expect(getByTestId('SUCCESS')).toBeDefined();
   });
 

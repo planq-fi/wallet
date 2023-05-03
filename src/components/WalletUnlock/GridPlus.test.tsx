@@ -22,6 +22,7 @@ const defaultProps = {
 
 const getComponent = () => {
   const { store } = createStore(
+    //@ts-ignore
     mockAppState({
       networks: APP_STATE.networks,
       connections: {

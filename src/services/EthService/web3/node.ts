@@ -95,8 +95,9 @@ export const requestAccounts = (web3: Web3Provider): Promise<Web3RequestPermissi
 
 const deriveApprovedAccounts = (walletPermissions: IWeb3Permission[] | undefined) => {
   if (!walletPermissions) return;
+  // @ts-ignore
   const exposedAccounts = walletPermissions.find(
-    (caveat) => caveat.name === 'exposedAccounts' || caveat.type === 'restrictReturnedAccounts'
+    (caveat) => caveat.type === 'restrictReturnedAccounts'
   ) as IExposedAccountsPermission | undefined;
   return exposedAccounts && exposedAccounts.value;
 };

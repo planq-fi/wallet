@@ -26,7 +26,9 @@ export { unknownReport, scamReport, verifiedReport, loadingReport } from './ptxr
 export { default as fERC20NonWeb3TxConfigJSON } from './erc20NonWeb3TxConfig.json';
 export {
   fApproveErc20TxConfig,
-  fTokenMigrationTxConfig
+  fTokenMigrationTxConfig,
+  fERC20NonWeb3TxConfig,
+  fETHNonWeb3TxConfig
 } from './txConfig';
 
 // Web3 ERC20 Tx Items

@@ -85,7 +85,7 @@ describe('fetchRates()', () => {
       assets: [{ ...fAssets[0], mappings: { coinGeckoId: fAssets[0].name } }],
       trackedAssets: {}
     });
-    //@ts-expect-error wrong typing for sagas
+    //@ts-ignore wrong typing for sagas
     return expectSaga(fetchRates)
       .withState(initialState)
       .provide([[call.fn(RatesService.fetchAssetsRates), rates]])

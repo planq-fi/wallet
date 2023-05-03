@@ -3,13 +3,15 @@ import {
   DEFAULT_ETH,
   DEFAULT_POLYGON,
   LEDGER_ETH,
+  TESTNET_ETH,
 } from '@mycrypto/wallets';
 
 import {
   DEFAULT_NETWORK,
   DEFAULT_NETWORK_TICKER,
   ETHPLORER_URL,
-  GAS_PRICE_DEFAULT
+  GAS_PRICE_DEFAULT,
+  GAS_PRICE_TESTNET
 } from '@config';
 import { NetworkId, NetworkLegacy, TTicker, WalletId } from '@types';
 import { makeExplorer } from '@utils/makeExplorer'; // leads to circular dependency if importing from base utils dir
@@ -48,6 +50,31 @@ export const NETWORKS_CONFIG: NetworkConfig = {
     },
     gasPriceSettings: GAS_PRICE_DEFAULT,
     shouldEstimateGasPrice: true,
+    supportsEIP1559: true
+  },
+  Ropsten: {
+    id: 'Ropsten',
+    name: 'Ropsten',
+    unit: 'RopstenETH' as TTicker,
+    chainId: 3,
+    isCustom: false,
+    color: '#adc101',
+    blockExplorer: makeExplorer({
+      name: 'Etherscan',
+      origin: 'https://ropsten.etherscan.io'
+    }),
+    tokens: [],
+    contracts: require('./contracts/ropsten.json'),
+    isTestnet: true,
+    dPaths: {
+      [WalletId.TREZOR]: TESTNET_ETH,
+      [WalletId.LEDGER_NANO_S]: TESTNET_ETH,
+      [WalletId.TREZOR_NEW]: TESTNET_ETH,
+      [WalletId.LEDGER_NANO_S_NEW]: TESTNET_ETH,
+      [WalletId.GRIDPLUS]: DEFAULT_ETH,
+      default: TESTNET_ETH
+    },
+    gasPriceSettings: GAS_PRICE_TESTNET,
     supportsEIP1559: true
   },
   MATIC: {

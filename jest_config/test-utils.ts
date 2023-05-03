@@ -20,6 +20,8 @@ import { ProvidersWrapper, withOptions } from './providersWrapper';
 export const APP_STATE = marshallState(SCHEMA_BASE);
 
 // Mock features used by react-slider
+
+// @ts-ignore
 window.matchMedia =
   window.matchMedia ||
   (() => ({
@@ -28,6 +30,7 @@ window.matchMedia =
     removeListener: noOp
   }));
 
+// @ts-ignore
 window.requestAnimationFrame =
   window.requestAnimationFrame ||
   ((callback) => {
