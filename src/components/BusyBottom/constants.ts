@@ -23,8 +23,7 @@ export const configs: Record<
 > = {
   GENERAL: [
     { copy: 'BUSY_BOTTOM_GENERAL_1', link: ROUTE_PATHS.CREATE_WALLET.path },
-    { copy: 'BUSY_BOTTOM_GENERAL_2', link: ROUTE_PATHS.DOWNLOAD_DESKTOP_APP.path },
-    { copy: 'BUSY_BOTTOM_GENERAL_3', link: ROUTE_PATHS.SETTINGS_IMPORT.path },
+    { copy: 'BUSY_BOTTOM_GENERAL_2', link: ROUTE_PATHS.SETTINGS_IMPORT.path },
     SUPPORT_LINK
   ],
   METAMASK_SIGN: [
