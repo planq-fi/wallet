@@ -1,10 +1,10 @@
 {
-  "name": "MyCrypto",
-  "author": "MyCryptoHQ",
-  "version": "2.2.5",
+  "name": "PlanqFi Wallet",
+  "author": "Planq Network",
+  "version": "1.0.0",
   "main": "main.js",
-  "description": "MyCrypto is a free, open-source interface for interacting with the blockchain",
-  "repository": "https://github.com/MyCryptoHQ/MyCrypto",
+  "description": "PlanqFi Wallet is a free, open-source interface for interacting with the blockchain",
+  "repository": "https://github.com/planq-fi/wallet",
   "engines": {
     "node": "12.14.1",
     "npm": ">= 6.4.1",
