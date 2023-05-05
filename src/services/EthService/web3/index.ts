@@ -1,1 +1,1 @@
-export { setupWeb3Node, getApprovedAccounts, requestAccounts, getChainIdAndLib } from './node';
+export { setupWeb3Node, setupCosmosWeb3Node, getApprovedAccounts, requestAccounts, getChainIdAndLib } from './node';

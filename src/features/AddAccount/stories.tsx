@@ -1,7 +1,5 @@
 import {
-  GridPlusUnlock,
   LegderUnlock,
-  TrezorUnlock,
   ViewOnlyDecrypt,
   WalletConnectDecrypt,
   Web3ProviderDecrypt
@@ -17,6 +15,10 @@ export const IS_WEB_AND_PRODUCTION: boolean = IS_PROD && !IS_STAGING;
 
 export const getStories = (): IStory[] => [
   {
+    name: WalletId.LEAP,
+    steps: [Web3ProviderDecrypt]
+  },
+  {
     name: WalletId.WEB3,
     steps: [Web3ProviderDecrypt]
   },
@@ -29,12 +31,8 @@ export const getStories = (): IStory[] => [
     steps: [NetworkSelectPanel, LegderUnlock]
   },
   {
-    name: WalletId.TREZOR_NEW,
-    steps: [NetworkSelectPanel, TrezorUnlock]
-  },
-  {
-    name: WalletId.GRIDPLUS,
-    steps: [NetworkSelectPanel, GridPlusUnlock]
+    name: WalletId.KEPLR,
+    steps: [Web3ProviderDecrypt]
   },
   {
     name: WalletId.VIEW_ONLY,

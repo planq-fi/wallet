@@ -13,6 +13,8 @@ export const WALLET_STEPS: SigningComponents = {
   [WalletId.TRUST]: SignTransactionWeb3,
   [WalletId.FRAME]: SignTransactionWeb3,
   [WalletId.COINBASE]: SignTransactionWeb3,
+  [WalletId.LEAP]: SignTransactionWeb3,
+  [WalletId.KEPLR]: SignTransactionWeb3,
   [WalletId.LEDGER_NANO_S]: SignTransactionLedger,
   [WalletId.LEDGER_NANO_S_NEW]: SignTransactionLedger,
   [WalletId.TREZOR]: SignTransactionTrezor,

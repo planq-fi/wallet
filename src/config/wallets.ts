@@ -255,7 +255,47 @@ export const WALLETS_CONFIG: Record<WalletId, IWalletConfig> = {
     flags: {
       supportsNonce: true
     }
-  }
+  },
+  [WalletId.LEAP]: {
+    id: WalletId.LEAP,
+    name: 'Leap Wallet',
+    isDeterministic: false,
+    isSecure: true,
+    isDesktopOnly: false,
+    type: WalletType.WEB3,
+    lid: 'X_LEAP',
+    icon: CoinbaseWalletIcon,
+    description: 'ADD_WEB3DESC',
+    helpLink: getKBHelpArticle(MIGRATE_TO_METAMASK),
+    install: {
+      getItLink: 'https://www.leapwallet.io/download',
+      appStore: 'https://apps.apple.com/in/app/leap-cosmos/id1642465549/',
+      googlePlay: 'https://play.google.com/store/apps/details?id=io.leapwallet.cosmos'
+    },
+    flags: {
+      supportsNonce: false
+    }
+  },
+  [WalletId.KEPLR]: {
+    id: WalletId.KEPLR,
+    name: 'Keplr Wallet',
+    isDeterministic: false,
+    isSecure: true,
+    isDesktopOnly: false,
+    type: WalletType.WEB3,
+    lid: 'X_KEPLR',
+    icon: CoinbaseWalletIcon,
+    description: 'ADD_WEB3DESC',
+    helpLink: getKBHelpArticle(MIGRATE_TO_METAMASK),
+    install: {
+      getItLink: 'https://www.keplr.app/download',
+      appStore: 'https://apps.apple.com/us/app/keplr-wallet/id1567851089',
+      googlePlay: 'https://play.google.com/store/apps/details?id=com.chainapsis.keplr'
+    },
+    flags: {
+      supportsNonce: false
+    }
+  },
 };
 
 // @todo research Pick with dynamic keys for better type saftey.

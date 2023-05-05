@@ -66,15 +66,18 @@ const Web3Unlock: FC<UnlockProps> = ({ isProviderPresent, formData, formDispatch
 
   const unlockWallet = useCallback(async () => {
     setIsSubmitting(true);
+
     try {
       const walletPayload: Web3Wallet[] | undefined = await WalletService.init({
         networks
       });
+
       if (!walletPayload) {
         throw new Error('Failed to unlock web3 wallet');
       }
       // If accountType is defined, we are in the AddAccountFlow
       if (formData.accountType) {
+
         const network = walletPayload[0].network;
         formDispatch({
           type: ActionType.SELECT_NETWORK,

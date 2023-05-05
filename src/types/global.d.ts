@@ -10,6 +10,8 @@ type TObject = Record<string, unknown>;
 interface CustomWindow extends Window {
   // Web3
   ethereum?: any;
+  leap?: any;
+  keplr?: any;
   web3?: any;
   Web3Provider?: ethers.providers.Web3Provider;
   Web3Signer?: Web3Provider;

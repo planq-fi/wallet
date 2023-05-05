@@ -9,7 +9,7 @@ export default { title: 'Features/SignTransaction/Web3', components: SignTransac
 const initialProps: UIProps = {
   walletConfig: WALLETS_CONFIG[WalletId.METAMASK],
   walletState: WalletSigningState.SUBMITTING,
-  networkName: 'Ethereum',
+  networkName: 'Planq',
   senderAccount: { ...fAccounts[0], wallet: WalletId.METAMASK },
   rawTransaction: fApproveErc20TxConfig.rawTransaction,
   contractName: '0x Proxy'

@@ -34,6 +34,8 @@ const handleUnlock = (walletType: WalletId | undefined, payload: any) => {
     switch (walletType) {
       case WalletId.VIEW_ONLY:
         return [payload];
+      case WalletId.LEAP:
+      case WalletId.KEPLR:
       case WalletId.WEB3:
         return payload.map((payloadItem: any) => ({
           address: payloadItem.getAddress(),

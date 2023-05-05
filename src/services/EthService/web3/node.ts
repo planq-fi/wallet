@@ -7,19 +7,56 @@ import {
   TAddress,
   Web3RequestPermissionsResult
 } from '@types';
+import {KeplrProvider, LeapProvider} from "@utils/cosmos-provider";
 
 export async function getChainIdAndLib() {
-  const lib = new Web3Provider(
-    (window as CustomWindow).ethereum || (window as CustomWindow).web3.currentProvider
-  );
-  const network = await lib.getNetwork();
-  const chainId = network.chainId;
-  return { chainId, lib };
+  if ((window as any).leap) {
+    const lib = new LeapProvider('https://evm-rpc.planq.network:443', {
+      chainId: 7070,
+      name: 'Planq',
+    }, 'planq_7070-2', true);
+    await lib.checkNetwork()
+    const network = await lib.getNetwork();
+    const chainId = network.chainId;
+    return { chainId, lib };
+  } else if ((window as any).keplr){
+    const lib = new KeplrProvider("https://evm-rpc.planq.network:443", {
+      chainId: 7070,
+      name: 'Planq',
+    }, "planq_7070-2", true);
+    await lib.checkNetwork()
+    const network = await lib.getNetwork();
+    const chainId = network.chainId;
+    return { chainId, lib };
+  } else {
+    const lib = new Web3Provider(
+      (window as CustomWindow).web3.currentProvider
+    );
+    const network = await lib.getNetwork();
+    const chainId = network.chainId;
+    return { chainId, lib };
+  }
+}
+
+export async function setupCosmosWeb3Node() {
+  // Handle the following MetaMask breaking change:
+  // https://medium.com/metamask/https-medium-com-metamask-breaking-change-injecting-web3-7722797916a8
+    const { lib, chainId } = await getChainIdAndLib();
+    return { lib, chainId };
+
+}
+
+function checkForCosmos() {
+  return ((typeof (window as CustomWindow).keplr !== 'undefined') || (typeof (window as CustomWindow).leap !== 'undefined'))
 }
 
 export async function setupWeb3Node() {
   // Handle the following MetaMask breaking change:
   // https://medium.com/metamask/https-medium-com-metamask-breaking-change-injecting-web3-7722797916a8
+  if(checkForCosmos()) {
+      return await getChainIdAndLib();
+  }
+
   const { ethereum } = window as CustomWindow;
   if (ethereum) {
     // Overwrite the legacy Web3 with the newer version.

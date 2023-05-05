@@ -10,7 +10,7 @@ import {
 
 import { AddressOnlyWallet } from './non-deterministic';
 import { WalletConnectWallet } from './walletconnect';
-import { unlockWeb3 } from './web3';
+import {unlockCosmosWeb3, unlockWeb3} from './web3';
 
 const trezorManifest = {
   email: 'support@planq.finance',
@@ -19,6 +19,10 @@ const trezorManifest = {
 
 const web3 = {
   init: ({ networks }: Web3WalletInitArgs) => unlockWeb3(networks)
+};
+
+const cosmos = {
+  init: ({ networks }: Web3WalletInitArgs) => unlockCosmosWeb3(networks)
 };
 
 const ledger = {
@@ -38,6 +42,8 @@ export const WalletFactory = {
   [WalletId.FRAME]: web3,
   [WalletId.COINBASE]: web3,
   [WalletId.TRUST]: web3,
+  [WalletId.LEAP]: cosmos,
+  [WalletId.KEPLR]: cosmos,
   [WalletId.LEDGER_NANO_S_NEW]: ledger,
   [WalletId.LEDGER_NANO_S]: ledger,
   [WalletId.TREZOR_NEW]: trezor,
