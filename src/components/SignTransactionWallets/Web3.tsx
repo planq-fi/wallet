@@ -22,6 +22,7 @@ import {
   WalletId
 } from '@types';
 import { getWeb3Config, isSameAddress } from '@utils';
+import {getChainIdAndLib} from "@services/EthService/web3";
 
 export enum WalletSigningState {
   SUBMITTING,
@@ -47,32 +48,48 @@ export default function SignTransactionWeb3({
   const walletConfig = getWeb3Config();
 
   useEffect(() => {
-    const ethereumProvider = (window as CustomWindow).ethereum;
-    if (ethereumProvider) {
-      // enable() is deprecated by MetaMask, but the alternative request() function is not implemented by all web3 wallets yet.
-      // @todo: Use request() when possible
-      (window as CustomWindow).ethereum.enable().then(() => {
-        attemptSign();
-        ethereumProvider.on('accountsChanged', () => attemptSign());
-        ethereumProvider.on('networkChanged', () => attemptSign());
-      });
+    let ethereumProvider
+    if(checkForCosmos()) {
+      attemptSign()
     } else {
-      throw Error('No web3 found');
+      ethereumProvider = (window as CustomWindow).ethereum;
+      if (ethereumProvider) {
+        // enable() is deprecated by MetaMask, but the alternative request() function is not implemented by all web3 wallets yet.
+        // @todo: Use request() when possible
+        (window as CustomWindow).ethereum.enable().then(() => {
+          attemptSign();
+          ethereumProvider.on('accountsChanged', () => attemptSign());
+          ethereumProvider.on('networkChanged', () => attemptSign());
+        });
+      } else {
+        throw Error('No web3 found');
+      }
     }
     return () => {
-      ethereumProvider.removeAllListeners();
+      if(ethereumProvider) {
+        ethereumProvider.removeAllListeners();
+      }
     };
   }, []);
 
+  function checkForCosmos() {
+    return ((typeof (window as CustomWindow).keplr !== 'undefined') || (typeof (window as CustomWindow).leap !== 'undefined'))
+  }
   const attemptSign = async () => {
-    const ethereumProvider = (window as CustomWindow).ethereum;
-    const web3Provider = new Web3Provider(ethereumProvider);
+    let web3Provider;
+    if(checkForCosmos()) {
+      const {  lib } = await getChainIdAndLib()
+      web3Provider = lib
+    } else {
+      const ethereumProvider = (window as CustomWindow).ethereum;
+      web3Provider = new Web3Provider(ethereumProvider);
+    }
 
     if (!web3Provider) {
       return;
     }
 
-    const web3Signer = web3Provider.getSigner();
+    const web3Signer = await web3Provider.getSigner();
     const web3Address = await web3Signer.getAddress();
     const checksumAddress = getAddress(web3Address);
 
@@ -96,7 +113,7 @@ export default function SignTransactionWeb3({
     }
 
     setWalletState(WalletSigningState.SUBMITTING);
-    const signerWallet = web3Provider.getSigner();
+    const signerWallet = await web3Provider.getSigner();
 
     // Calling ethers.js with a tx object containing a 'from' property
     // will fail https://github.com/ethers-io/ethers.js/issues/692.

@@ -29,7 +29,10 @@ module.exports = merge.smart(common, {
       'Access-Control-Allow-Methods': '*',
       'Access-Control-Allow-Headers': '*'
     },
-    stats: 'errors-only'
+    stats: 'errors-only',
+    watchOptions: {
+      ignored: /node_modules/
+    }
   },
 
   output: {

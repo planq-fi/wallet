@@ -23,10 +23,10 @@ export type NetworkConfig = {
 
 export const NETWORKS_CONFIG: NetworkConfig = {
   Ethereum: {
-    id: DEFAULT_NETWORK, // Ethereum Network Id
+    id: 'Ethereum', // Ethereum Network Id
     name: 'Ethereum',
     baseUnitName: 'Ether',
-    unit: DEFAULT_NETWORK_TICKER,
+    unit: 'ETH' as TTicker,
     chainId: 1,
     isCustom: false,
     color: '#007896',
@@ -134,9 +134,9 @@ export const NETWORKS_CONFIG: NetworkConfig = {
     }
   },
   Planq: {
-    id: 'Planq',
-    name: 'Planq Mainnet',
-    unit: 'PLQ' as TTicker,
+    id: DEFAULT_NETWORK,
+    name: 'Planq',
+    unit: DEFAULT_NETWORK_TICKER,
     chainId: 7070,
     isCustom: false,
     color: '#6d2eae',

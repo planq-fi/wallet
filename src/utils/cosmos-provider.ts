@@ -3,6 +3,9 @@ import { planqToEth } from './bech32-utils'
 import { BigNumber } from "@ethersproject/bignumber";
 import { VoidSigner } from '@ethersproject/abstract-signer'
 import { ExternalProvider } from "@ethersproject/providers/src.ts/web3-provider";
+import {Deferrable, resolveProperties, shallowCopy} from "@ethersproject/properties";
+import {TransactionRequest} from "@ethersproject/abstract-provider";
+import {hexlify} from "@ethersproject/bytes";
 
 export class KeplrProvider extends JsonRpcProvider {
   keplrAvailable = false
@@ -148,7 +151,7 @@ export class KeplrSigner extends VoidSigner {
   }
   async signTransaction(transaction) {
     const account = await this.keplrInstance.getAccountsBech32()
-    transaction.gasLimit = transaction.gasLimit.mul(BigNumber.from(2))
+
     // @ts-ignore
     return await window.keplr.signEthereum(
       this.keplrInstance.chainId,
@@ -156,6 +159,62 @@ export class KeplrSigner extends VoidSigner {
       JSON.stringify(transaction),
       'transaction',
     )
+  }
+
+  async sendUncheckedTransaction(transaction: Deferrable<TransactionRequest>): Promise<string> {
+    transaction = shallowCopy(transaction);
+
+    const fromAddress = this.getAddress().then((address) => {
+      if (address) { address = address.toLowerCase(); }
+      return address;
+    });
+
+    // The JSON-RPC for eth_sendTransaction uses 90000 gas; if the user
+    // wishes to use this, it is easy to specify explicitly, otherwise
+    // we look it up for them.
+    if (transaction.gasLimit == null) {
+      const estimate = shallowCopy(transaction);
+      estimate.from = fromAddress;
+      transaction.gasLimit = this.provider.estimateGas(estimate);
+    }
+
+    if (transaction.to != null) {
+      transaction.to = Promise.resolve(transaction.to).then(async (to) => {
+        if (to == null) { return null; }
+        const address = await this.provider.resolveName(to);
+        if (address == null) {
+          new Error("provided ENS name resolves to null tx.to" + to);
+        }
+        return address;
+      });
+    }
+
+    return resolveProperties({
+      tx: resolveProperties(transaction),
+      sender: fromAddress
+    }).then(async ({tx, sender}) => {
+
+      if (tx.from != null) {
+        if (tx.from.toLowerCase() !== sender) {
+          new Error("from address mismatch transaction" + transaction);
+        }
+      } else {
+        tx.from = sender;
+      }
+      const signedTx = await this.signTransaction(tx)
+
+      // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+      const hexTx = hexlify(signedTx);
+
+      return this.keplrInstance.send("eth_sendRawTransaction", [hexTx]).then((hash) => {
+        return hash;
+      }, (error) => {
+        new Error("sendTransaction" + error + " " + hexTx);
+      });
+    });
+  }
+  async getAddress() {
+    return this.address;
   }
 
   async signMessage(message) {

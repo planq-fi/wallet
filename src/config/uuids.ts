@@ -1,4 +1,5 @@
 import { TUuid } from '@types';
+import {generateAssetUUID} from "@utils";
 
 export const ETHUUID = '356a192b-7913-504c-9457-4d18c28d46e6';
 export const DAIUUID = 'e1f698bf-cb85-5405-b563-14774af14bf1';
@@ -10,7 +11,8 @@ export const REPV1UUID = 'd017a1e8-bdd3-5c32-8866-da258f75b0e9' as TUuid;
 export const REPV2UUID = '3dcbc269-fa47-5707-b180-4cb0ba6e5cdf' as TUuid;
 export const LENDUUID = '1c77b322-a88c-57cc-b956-78c2bc17c360' as TUuid;
 export const ANTv1UUID = '7f4d2f19-9a76-5930-b63b-ac9b0afe6201' as TUuid;
-
+console.log(generateAssetUUID(7070));
+export const PLQUUID =  generateAssetUUID(7070)
 export const XDAIUUID = '310b86e0-b62b-5285-a2fc-91c7be5380a9' as TUuid;
 export const USDCPolygonUUID = '4eaa10d0-3e33-5d58-9191-c5eb4c8ec1be' as TUuid;
 
