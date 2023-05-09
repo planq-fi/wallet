@@ -11,8 +11,6 @@ import { translateRaw } from '@translations';
 import { TTrayItem } from '@types';
 import { useEffectOnce, useTimeoutFn } from '@vendor';
 
-import { TrayLink } from './TrayLink';
-
 const SBox = styled(Box)`
   @media screen and (max-height: 700px) and (max-width: ${theme.breakpoints.sm}) {
     flex-direction: column;
@@ -27,7 +25,7 @@ const Button = styled(Box)`
   }
 `;
 
-export const SupportUsTray = ({ items }: { items: TTrayItem[] }) => {
+export const SupportUsTray = ({  }: { items: TTrayItem[] }) => {
   const [displayingMessage, setDisplayingMessage] = useState(false);
   const { track } = useAnalytics();
   const [isReady, clear, set] = useTimeoutFn(() => setDisplayingMessage(false), 3000);
@@ -135,15 +133,6 @@ export const SupportUsTray = ({ items }: { items: TTrayItem[] }) => {
             </>
           )}
         </Box>
-        <Text
-          textTransform="uppercase"
-          fontSize={{ _: '14px', sm: '1.2vh', xxl: '14px' }}
-          fontWeight={700}
-          color={{ _: 'GREYISH_BROWN', sm: 'BLUE_DARK_SLATE' }}
-        >
-          {translateRaw('NAVIGATION_PARTNERS')}
-        </Text>
-        {items.map((item, i) => item.type === 'external' && <TrayLink key={i} item={item} />)}
       </Box>
     </>
   );

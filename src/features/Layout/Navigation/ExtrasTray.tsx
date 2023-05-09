@@ -6,7 +6,7 @@ import { SPACING } from '@theme';
 import { translateRaw } from '@translations';
 import { useClickAway } from '@vendor';
 
-import { LinkSet, Subscribe } from './components';
+import { LinkSet } from './components';
 
 export const ExtrasTray = ({ isMobile, closeTray }: { isMobile: boolean; closeTray(): void }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -45,7 +45,6 @@ export const ExtrasTray = ({ isMobile, closeTray }: { isMobile: boolean; closeTr
             <Icon type="nav-close" color="WHITE" width="16px" mr="15px" onClick={closeTray} />
           </Box>
         )}
-        <Subscribe />
       </Box>
       <LinkSet isMobile={isMobile} />
     </Box>

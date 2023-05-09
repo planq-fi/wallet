@@ -4,7 +4,7 @@ import { connect, ConnectedProps } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { AnnouncementBanner, Banner, LinkApp } from '@components';
+import { Banner, LinkApp } from '@components';
 import { ROUTE_PATHS } from '@config';
 import { ErrorContext } from '@features';
 import { getAppRoutesObject } from '@routing';
@@ -110,14 +110,6 @@ const SContainer = styled.div`
     `}
 `;
 
-const BannerWrapper = styled.div`
-  max-width: 1000px;
-  position: sticky;
-  top: '15px';
-  left: 0;
-  margin: 0 15px;
-`;
-
 const Layout = ({ config = {}, className = '', children, isDemoMode }: Props) => {
   const { centered = true, fluid, fullW = false, bgColor, paddingV } = config;
   const { featureFlags } = useFeatureFlags();
@@ -187,11 +179,6 @@ const Layout = ({ config = {}, className = '', children, isDemoMode }: Props) =>
               isTrayOpen={isOpen}
               openTray={() => setIsOpen(!isOpen)}
             />
-            {isMobile && pathname === ROUTE_PATHS.DASHBOARD.path && (
-              <BannerWrapper>
-                <AnnouncementBanner />
-              </BannerWrapper>
-            )}
             <SContainer
               centered={centered}
               fluid={fluid}

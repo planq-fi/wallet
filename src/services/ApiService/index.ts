@@ -1,5 +1,4 @@
 export { default as ApiService } from './ApiService';
-export { subscribeToMailingList } from './emails';
 export * from './Gas';
 export { DeFiReserveMapService } from './DeFiReserveMap';
 export { GithubService } from './Github';

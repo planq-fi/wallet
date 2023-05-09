@@ -298,31 +298,19 @@ export const mobileLinks = (APP_ROUTES: IAppRoutes) => {
 
 export const socialLinks = [
   {
-    link: 'https://twitter.com/mycrypto',
+    link: 'https://twitter.com/planqfoundation',
     icon: 'nav-twitter'
   },
   {
-    link: 'https://www.facebook.com/mycryptoHQ/',
-    icon: 'nav-facebook'
-  },
-  {
-    link: 'https://instagram.com/mycryptohq',
-    icon: 'nav-instagram'
-  },
-  {
-    link: 'https://www.linkedin.com/company/mycrypto',
-    icon: 'nav-linkedin'
-  },
-  {
-    link: 'https://github.com/MyCryptoHQ',
+    link: 'https://github.com/planq-fi',
     icon: 'nav-github'
   },
   {
-    link: 'https://www.reddit.com/r/mycrypto/',
+    link: 'https://www.reddit.com/r/planq_network/',
     icon: 'nav-reddit'
   },
   {
-    link: 'https://discord.gg/VSaTXEA',
+    link: 'https://discord.gg/planq-network',
     icon: 'nav-discord'
   }
 ];
@@ -330,28 +318,23 @@ export const socialLinks = [
 export const MYCLinks = [
   {
     title: translateRaw('NEW_FOOTER_TEXT_11'),
-    link: 'https://blog.mycrypto.com/',
+    link: 'https://medium.com/@planq',
     icon: 'nav-blog'
   },
   {
     title: translateRaw('NEW_FOOTER_TEXT_8'),
-    link: 'https://mycrypto.com/about',
+    link: 'https://planq.network/about',
     icon: 'nav-team'
   },
   {
     title: translateRaw('NEW_FOOTER_TEXT_9'),
-    link: 'mailto:press@mycrypto.com',
+    link: 'mailto:info@planq.network',
     icon: 'nav-press'
   },
   {
     title: translateRaw('NEW_FOOTER_TEXT_10'),
-    link: 'https://mycrypto.com/privacy/',
+    link: 'https://planq.network/privacy-policy/',
     icon: 'nav-privacy'
-  },
-  {
-    title: translateRaw('NAVIGATION_DISCLAIMER'),
-    link: 'https://mycrypto.com/disclaimer',
-    icon: 'nav-disclaimer'
   }
 ];
 
@@ -366,11 +349,11 @@ export const productsLinks = [
     link: CRYPTOSCAMDB
   },
   {
-    title: 'MoneroVision',
-    link: 'https://monerovision.com/'
+    title: 'Leap Wallet',
+    link: 'https://www.leapwallet.io/'
   },
   {
-    title: 'FindETH',
-    link: 'https://findeth.io'
+    title: 'Planq Network',
+    link: 'https://planq.network'
   }
 ];

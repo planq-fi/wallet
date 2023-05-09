@@ -1,4 +1,4 @@
-import { AnnouncementBanner, Box, Icon } from '@components';
+import { Box, Icon } from '@components';
 import { COLORS, SPACING } from '@theme';
 
 import { TopItem } from './components';
@@ -37,9 +37,6 @@ export const TopNav = ({
       {!isMobile && (
         <>
           {/* Center Banner by adding left margin */}
-          <Box mr="auto" ml={{ _: '0', xxl: 'calc(50% - 462px)' }}>
-            <AnnouncementBanner />
-          </Box>
           <Icon
             type="logo-mycrypto-text-blue"
             width="64px"
