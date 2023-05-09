@@ -24,6 +24,15 @@ export const fDAI: ExtendedAsset = {
 
 export const fAssets = [
   {
+    uuid: 'ae3ea1cd-f8d2-5ccb-9a4b-4646dde50c5c',
+    name: 'Planq',
+    networkId: 'Planq',
+    type: 'base',
+    ticker: 'PLQ',
+    decimal: 18,
+    isCustom: false
+  },
+  {
     uuid: '356a192b-7913-504c-9457-4d18c28d46e6',
     name: 'Ether',
     networkId: 'Ethereum',

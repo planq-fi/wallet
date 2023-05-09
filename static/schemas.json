@@ -1,0 +1,282 @@
+{
+    "0X_V3_EXCHANGE": {
+       "protocol": "0X_V3",
+       "type": "EXCHANGE"
+    },
+    "1INCH_EXCHANGE": {
+       "protocol": "1INCH",
+       "type": "EXCHANGE"
+    },
+    "1INCH_V3_EXCHANGE": {
+       "protocol": "1INCH_V3",
+       "type": "EXCHANGE"
+    },
+    "AAVE_BORROW": {
+       "protocol": "AAVE",
+       "type": "BORROW"
+    },
+    "AAVE_DEPOSIT": {
+       "protocol": "AAVE",
+       "type": "DEPOSIT"
+    },
+    "AAVE_REPAY": {
+       "protocol": "AAVE",
+       "type": "REPAY"
+    },
+    "AAVE_WITHDRAW": {
+       "protocol": "AAVE",
+       "type": "WITHDRAW"
+    },
+    "ARBITRUM_BRIDGE_IN": {
+       "protocol": "ARBITRUM",
+       "type": "BRIDGE_IN"
+    },
+    "ARBITRUM_BRIDGE_OUT": {
+       "protocol": "ARBITRUM",
+       "type": "BRIDGE_OUT"
+    },
+    "BALANCER_CLAIM": {
+       "protocol": "BALANCER",
+       "type": "CLAIM"
+    },
+    "BALANCER_DEPOSIT": {
+       "protocol": "BALANCER",
+       "type": "DEPOSIT"
+    },
+    "BALANCER_EXCHANGE": {
+       "protocol": "BALANCER",
+       "type": "EXCHANGE"
+    },
+    "BALANCER_WITHDRAW": {
+       "protocol": "BALANCER",
+       "type": "WITHDRAW"
+    },
+    "COMPOUND_CLAIM": {
+       "protocol": "COMPOUND",
+       "type": "CLAIM"
+    },
+    "COMPOUND_V2_BORROW": {
+       "protocol": "COMPOUND",
+       "type": "BORROW"
+    },
+    "COMPOUND_V2_DEPOSIT": {
+       "protocol": "COMPOUND",
+       "type": "DEPOSIT"
+    },
+    "COMPOUND_V2_REPAY": {
+       "protocol": "COMPOUND",
+       "type": "REPAY"
+    },
+    "COMPOUND_V2_WITHDRAW": {
+       "protocol": "COMPOUND",
+       "type": "WITHDRAW"
+    },
+    "DAPPNODE_CLAIM": {
+       "protocol": "DAPPNODE",
+       "type": "CLAIM"
+    },
+    "DEX_AG_EXCHANGE": {
+       "protocol": "DEX_AG",
+       "type": "EXCHANGE"
+    },
+    "ENS_CLAIM": {
+       "protocol": "ENS",
+       "type": "CLAIM"
+    },
+    "ENS_DOMAIN_REGISTER": {
+       "protocol": "ENS",
+       "type": "DOMAIN_REGISTER"
+    },
+    "ENS_DOMAIN_RENEW": {
+       "protocol": "ENS",
+       "type": "DOMAIN_RENEW"
+    },
+    "ENS_DOMAIN_RESOLVER_SET": {
+       "protocol": "ENS",
+       "type": "DOMAIN_RESOLVER_SET"
+    },
+    "ENS_DOMAIN_TRANSFER": {
+       "protocol": "ENS",
+       "type": "DOMAIN_TRANSFER"
+    },
+    "ERC_20_APPROVE": {
+       "protocol": "ERC_20",
+       "type": "APPROVE"
+    },
+    "ERC_20_MINT": {
+       "protocol": "ERC_20",
+       "type": "MINT"
+    },
+    "ERC_20_TRANSFER": {
+       "protocol": "ERC_20",
+       "type": "TRANSFER"
+    },
+    "ERC_721_APPROVE": {
+       "protocol": "ERC_721",
+       "type": "NFT_APPROVE"
+    },
+    "ERC_721_MINT": {
+       "protocol": "ERC_721",
+       "type": "NFT_MINT"
+    },
+    "ERC_721_TRANSFER": {
+       "protocol": "ERC_721",
+       "type": "NFT_TRANSFER"
+    },
+    "ETHERMINE_MINING_PAYOUT": {
+       "protocol": "ETHERMINE",
+       "type": "MINING_PAYOUT"
+    },
+    "FUTURESWAP_GOVERNANCE_VOTE": {
+       "protocol": "FUTURESWAP",
+       "type": "VOTE"
+    },
+    "GITCOIN_CLAIM": {
+       "protocol": "GITCOIN",
+       "type": "CLAIM"
+    },
+    "GNOSIS_SAFE_APPROVE_TX": {
+       "protocol": "GNOSIS_SAFE",
+       "type": "MULTISIG_APPROVE_TX"
+    },
+    "GNOSIS_SAFE_WITHDRAW": {
+       "protocol": "GNOSIS_SAFE",
+       "type": "WITHDRAW"
+    },
+    "IDEX_DEPOSIT_ETH": {
+       "protocol": "IDEX",
+       "type": "DEPOSIT_ETH"
+    },
+    "IDEX_DEPOSIT_TOKEN": {
+       "protocol": "IDEX",
+       "type": "DEPOSIT_TOKEN"
+    },
+    "IDEX_WITHDRAW": {
+       "protocol": "IDEX",
+       "type": "WITHDRAW"
+    },
+    "KYBER_EXCHANGE": {
+       "protocol": "KYBER",
+       "type": "EXCHANGE"
+    },
+    "METAMASK_V1_EXCHANGE": {
+       "protocol": "METAMASK_V1",
+       "type": "EXCHANGE"
+    },
+    "MININGPOOLHUB_MINING_PAYOUT": {
+       "protocol": "MININGPOOLHUB",
+       "type": "MINING_PAYOUT"
+    },
+    "OPENSEA_CANCEL_ORDER": {
+       "protocol": "OPENSEA",
+       "type": "CANCEL_ORDER"
+    },
+    "OPENSEA_EXCHANGE": {
+       "protocol": "OPENSEA",
+       "type": "NFT_EXCHANGE"
+    },
+    "OPENSEA_REGISTER": {
+       "protocol": "OPENSEA",
+       "type": "REGISTER"
+    },
+    "PARASWAP_V4_EXCHANGE": {
+       "protocol": "PARASWAP_V4",
+       "type": "EXCHANGE"
+    },
+    "POLYGON_BRIDGE_IN": {
+       "protocol": "POLYGON",
+       "type": "BRIDGE_IN"
+    },
+    "POLYGON_BRIDGE_OUT": {
+       "protocol": "POLYGON",
+       "type": "BRIDGE_OUT"
+    },
+    "POOLTOGETHER_CLAIM": {
+       "protocol": "POOLTOGETHER",
+       "type": "CLAIM"
+    },
+    "POOLTOGETHER_DEPOSIT": {
+       "protocol": "POOLTOGETHER",
+       "type": "DEPOSIT"
+    },
+    "POOLTOGETHER_WITHDRAW": {
+       "protocol": "POOLTOGETHER",
+       "type": "WITHDRAW"
+    },
+    "SHAPESHIFT_CLAIM": {
+       "protocol": "SHAPESHIFT",
+       "type": "CLAIM"
+    },
+    "SPARKPOOL_MINING_PAYOUT": {
+       "protocol": "SPARKPOOL",
+       "type": "MINING_PAYOUT"
+    },
+    "SUSHISWAP_DEPOSIT": {
+       "protocol": "SUSHISWAP",
+       "type": "DEPOSIT"
+    },
+    "SUSHISWAP_EXCHANGE": {
+       "protocol": "SUSHISWAP",
+       "type": "EXCHANGE"
+    },
+    "SUSHISWAP_WITHDRAW": {
+       "protocol": "SUSHISWAP",
+       "type": "WITHDRAW"
+    },
+    "TORNADO_CASH_V1_DEPOSIT": {
+       "protocol": "TORNADO_CASH_V1",
+       "type": "DEPOSIT"
+    },
+    "TORNADO_CASH_V1_WITHDRAW": {
+       "protocol": "TORNADO_CASH_V1",
+       "type": "WITHDRAW"
+    },
+    "UNISWAP_CLAIM": {
+       "protocol": "UNISWAP",
+       "type": "CLAIM"
+    },
+    "UNISWAP_V1_DEPOSIT": {
+       "protocol": "UNISWAP_V1",
+       "type": "DEPOSIT"
+    },
+    "UNISWAP_V1_EXCHANGE": {
+       "protocol": "UNISWAP_V1",
+       "type": "EXCHANGE"
+    },
+    "UNISWAP_V1_WITHDRAW": {
+       "protocol": "UNISWAP_V1",
+       "type": "WITHDRAW"
+    },
+    "UNISWAP_V2_DEPOSIT": {
+       "protocol": "UNISWAP_V2",
+       "type": "DEPOSIT"
+    },
+    "UNISWAP_V2_EXCHANGE": {
+       "protocol": "UNISWAP_V2",
+       "type": "EXCHANGE"
+    },
+    "UNISWAP_V2_WITHDRAW": {
+       "protocol": "UNISWAP_V2",
+       "type": "WITHDRAW"
+    },
+    "UNISWAP_V3_DEPOSIT": {
+       "protocol": "UNISWAP_V3",
+       "type": "DEPOSIT"
+    },
+    "UNISWAP_V3_EXCHANGE": {
+       "protocol": "UNISWAP_V3",
+       "type": "EXCHANGE"
+    },
+    "UNISWAP_V3_WITHDRAW": {
+       "protocol": "UNISWAP_V3",
+       "type": "WITHDRAW"
+    },
+    "WETH_UNWRAP": {
+       "protocol": "ERC_20",
+       "type": "UNWRAP"
+    },
+    "WETH_WRAP": {
+       "protocol": "ERC_20",
+       "type": "WRAP"
+    }
+ }
