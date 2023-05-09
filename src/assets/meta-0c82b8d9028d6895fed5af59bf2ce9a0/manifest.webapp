@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "name": "PlanqFi-Wallet",
+  "description": "Ethereum Wallet Manager",
+  "icons": {
+    "60": "/src/assets/meta-0c82b8d9028d6895fed5af59bf2ce9a0/firefox_app_60x60.png",
+    "128": "/src/assets/meta-0c82b8d9028d6895fed5af59bf2ce9a0/firefox_app_128x128.png",
+    "512": "/src/assets/meta-0c82b8d9028d6895fed5af59bf2ce9a0/firefox_app_512x512.png"
+  },
+  "developer": {
+    "name": "Planq Network",
+    "url": null
+  }
+}
