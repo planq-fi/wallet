@@ -15,10 +15,6 @@ export const IS_WEB_AND_PRODUCTION: boolean = IS_PROD && !IS_STAGING;
 
 export const getStories = (): IStory[] => [
   {
-    name: WalletId.LEAP,
-    steps: [Web3ProviderDecrypt]
-  },
-  {
     name: WalletId.WEB3,
     steps: [Web3ProviderDecrypt]
   },
@@ -29,10 +25,6 @@ export const getStories = (): IStory[] => [
   {
     name: WalletId.LEDGER_NANO_S_NEW,
     steps: [NetworkSelectPanel, LegderUnlock]
-  },
-  {
-    name: WalletId.KEPLR,
-    steps: [Web3ProviderDecrypt]
   },
   {
     name: WalletId.VIEW_ONLY,

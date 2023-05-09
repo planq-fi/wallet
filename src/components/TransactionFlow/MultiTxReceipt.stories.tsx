@@ -1,6 +1,6 @@
 import { ComponentProps } from 'react';
 
-import { DAIUUID, ETHUUID, Fiats } from '@config';
+import { DAIUUID, PLQUUID, Fiats } from '@config';
 import { stepsContent } from '@features/SwapAssets/config';
 import { SwapDisplayData } from '@features/SwapAssets/types';
 import { fAccount, fNetwork, fTxConfigs, fTxParcels } from '@fixtures';
@@ -19,7 +19,7 @@ const swapDisplay: SwapDisplayData = {
   toAsset: {
     name: 'Ethereum',
     ticker: 'ETH' as TTicker,
-    uuid: ETHUUID as TUuid
+    uuid: PLQUUID as TUuid
   },
   fromAmount: bigify('10'),
   toAmount: bigify('0.5')

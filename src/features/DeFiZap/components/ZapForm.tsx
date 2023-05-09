@@ -14,7 +14,7 @@ import {
   InlineMessage,
   PoweredByText
 } from '@components';
-import { ETHUUID } from '@config';
+import { PLQUUID } from '@config';
 import { validateAmountField } from '@features/SendAssets/components/validators/validators';
 import { fetchGasPriceEstimates } from '@services/ApiService';
 import { getNonce } from '@services/EthService';
@@ -75,8 +75,8 @@ const ZapForm = ({ onComplete, zapSelected, isDemoMode }: Props) => {
   const defaultAccount = useSelector(getDefaultAccount());
   const { assets } = useAssets();
   const { networks } = useNetworks();
-  const ethAsset = assets.find((asset) => asset.uuid === ETHUUID) as Asset;
-  const network = networks.find((n) => n.baseAsset === ETHUUID) as Network;
+  const ethAsset = assets.find((asset) => asset.uuid === PLQUUID) as Asset;
+  const network = networks.find((n) => n.baseAsset === PLQUUID) as Network;
   const relevantAccounts = accounts.filter(isEthereumAccount);
 
   return (

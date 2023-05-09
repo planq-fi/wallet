@@ -2,7 +2,7 @@ import { ComponentProps } from 'react';
 
 import { mockAppState, ProvidersWrapper } from 'test-utils';
 
-import { DAIUUID, ETHUUID } from '@config';
+import { DAIUUID, PLQUUID } from '@config';
 import { fAccounts, fAssets, fTxParcels } from '@fixtures';
 import { ISwapAsset, TTicker, TUuid } from '@types';
 import { bigify, noOp } from '@utils';
@@ -23,7 +23,7 @@ const DAI: ISwapAsset = {
   ticker: 'DAI' as TTicker,
   uuid: DAIUUID as TUuid
 };
-const ETH: ISwapAsset = { name: 'Ethereum', ticker: 'ETH' as TTicker, uuid: ETHUUID as TUuid };
+const ETH: ISwapAsset = { name: 'Ethereum', ticker: 'ETH' as TTicker, uuid: PLQUUID as TUuid };
 const daiAmount = bigify('100');
 const ethAmount = bigify('0.5');
 const assetPair = {

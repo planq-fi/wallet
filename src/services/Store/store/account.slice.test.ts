@@ -3,7 +3,7 @@ import { parseEther } from '@ethersproject/units';
 import { call } from 'redux-saga-test-plan/matchers';
 import { APP_STATE, expectSaga, mockAppState } from 'test-utils';
 
-import { DEFAULT_NETWORK, ETHUUID, REPV1UUID, REPV2UUID } from '@config';
+import { DEFAULT_NETWORK, PLQUUID, REPV1UUID, REPV2UUID } from '@config';
 import { ITxHistoryType } from '@features/Dashboard/types';
 import {
   fAccount,
@@ -168,7 +168,7 @@ describe('AccountSlice', () => {
         mtime: 1607602775360
       },
       {
-        uuid: ETHUUID as TUuid,
+        uuid: PLQUUID as TUuid,
         balance: '2000000000000000000',
         mtime: 1607602775360
       }
@@ -722,7 +722,7 @@ describe('AccountSlice', () => {
             ...fTxReceipt,
             txType: ITxType.SWAP,
             status: ITxStatus.SUCCESS,
-            metadata: { receivingAsset: ETHUUID }
+            metadata: { receivingAsset: PLQUUID }
           }
         })
       )

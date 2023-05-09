@@ -5,7 +5,7 @@ import {
   ANTv1UUID,
   DAPPNODE_AIRDROP_LINK,
   ENS_AIRDROP_LINK,
-  ETHUUID,
+  PLQUUID,
   EXT_URLS,
   FAUCET_NETWORKS,
   GOLEMV1UUID,
@@ -13,7 +13,6 @@ import {
   REPV1UUID,
   ROUTE_PATHS,
   socialMediaLinks,
-  SUBSCRIBE_NEWSLETTER_LINK,
   UNISWAP_LINK
 } from '@config';
 import translate, { translateRaw } from '@translations';
@@ -319,23 +318,6 @@ export const actionTemplates: ActionTemplate[] = [
     category: ACTION_CATEGORIES.OTHER
   },
   {
-    name: ACTION_NAME.NEWSLETTER,
-    heading: translateRaw('NEWSLETTER_ACTION_HEADING'),
-    icon: 'newsletter',
-    body: [translate('NEWSLETTER_ACTION_BODY')],
-    priority: 0,
-    button: {
-      component: ActionButton,
-      props: {
-        content: translateRaw('NEWSLETTER_ACTION_BUTTON'),
-        shouldComplete: true,
-        to: SUBSCRIBE_NEWSLETTER_LINK,
-        external: true
-      }
-    },
-    category: ACTION_CATEGORIES.OTHER
-  },
-  {
     name: ACTION_NAME.TELEGRAM,
     heading: translateRaw('TELEGRAM_ACTION_HEADING'),
     icon: 'telegram-icon',
@@ -358,7 +340,7 @@ export const actionTemplates: ActionTemplate[] = [
     icon: 'swap',
     body: [translate('SWAP_ACTION_BODY')],
     filter: ({ assets }: ActionFilters) =>
-      assets.some((a) => a.uuid === ETHUUID) && assets.some((a) => a.uuid !== ETHUUID),
+      assets.some((a) => a.uuid === PLQUUID) && assets.some((a) => a.uuid !== PLQUUID),
     priority: 0,
     button: {
       component: ActionButton,

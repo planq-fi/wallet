@@ -13,7 +13,7 @@ import {
 } from '@components';
 import {
   BUY_MYCRYPTO_WEBSITE,
-  ETHUUID,
+  PLQUUID,
   MOONPAY_API_QUERYSTRING,
   MOONPAY_ASSET_UUIDS,
   ROUTE_PATHS
@@ -79,7 +79,7 @@ export const BuyAssetsForm = () => {
   const history = useHistory();
   const accounts = useSelector(getStoreAccounts);
   const { assets } = useAssets();
-  const ethAsset = getAssetByUUID(assets)(ETHUUID) as Asset;
+  const ethAsset = getAssetByUUID(assets)(PLQUUID) as Asset;
   const defaultAccount = useSelector(getDefaultAccount(true));
 
   const initialFormikValues: IBuyFormState = {

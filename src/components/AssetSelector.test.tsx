@@ -3,7 +3,7 @@ import { ComponentProps } from 'react';
 import selectEvent from 'react-select-event';
 import { fireEvent, screen, simpleRender } from 'test-utils';
 
-import { ETHUUID } from '@config';
+import { PLQUUID } from '@config';
 import { fAssets } from '@fixtures';
 import { SPACING } from '@theme';
 import { translateRaw } from '@translations';
@@ -78,7 +78,7 @@ describe('AssetSelector', () => {
 const itemProps: ComponentProps<typeof AssetSelectorItem> = {
   ticker: 'ETH' as TTicker,
   name: 'Ether',
-  uuid: ETHUUID as TUuid,
+  uuid: PLQUUID as TUuid,
   onClick: jest.fn()
 };
 

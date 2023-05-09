@@ -20,7 +20,7 @@ import {
   TextSelector,
   Tooltip
 } from '@components';
-import { ETHUUID } from '@config';
+import { PLQUUID } from '@config';
 import { getAccountsWithAssetBalance } from '@features/SwapAssets/helpers';
 import { fetchUniversalGasPriceEstimate } from '@services/ApiService';
 import { getNonce } from '@services/EthService';
@@ -83,7 +83,7 @@ const TokenMigrationForm = ({
   const accounts = useSelector(getStoreAccounts);
   const { networks } = useNetworks();
   const { getAssetByUUID } = useAssets();
-  const network = networks.find((n) => n.baseAsset === ETHUUID) as Network;
+  const network = networks.find((n) => n.baseAsset === PLQUUID) as Network;
   const defaultStoreAccount = useSelector(getDefaultAccount());
   const relevantAccounts = accounts.filter(isEthereumAccount);
   const tokenMigrationConfig = MIGRATION_CONFIGS[migration];

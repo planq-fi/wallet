@@ -26,7 +26,7 @@ import TransactionFeeDisplay from '@components/TransactionFlow/displays/Transact
 import {
   DEFAULT_ASSET_DECIMAL,
   DEFAULT_NETWORK,
-  ETHUUID,
+  PLQUUID,
   getKBHelpArticle,
   getWalletConfig,
   KB_HELP_ARTICLE,
@@ -204,10 +204,10 @@ export const SendAssetsForm = ({ txConfig, onComplete, protectTxButton }: ISendF
   const userAssets = useSelector(getUserAssets);
   const isDemoMode = useSelector(getIsDemoMode);
 
-  const EthAsset = getAssetByUUID(ETHUUID as TUuid)!;
+  const EthAsset = getAssetByUUID(PLQUUID as TUuid)!;
 
   const validAccounts = accounts.filter((account) => account.wallet !== WalletId.VIEW_ONLY);
-  const userAccountEthAsset = userAssets.find((a) => a.uuid === ETHUUID);
+  const userAccountEthAsset = userAssets.find((a) => a.uuid === PLQUUID);
   const defaultAsset = (() => {
     if (userAccountEthAsset) {
       return userAccountEthAsset;

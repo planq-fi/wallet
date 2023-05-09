@@ -8,7 +8,7 @@ import twelveMonthsIcon from '@assets/images/membership/membership-twelvemonths.
 import {
   DAIUUID,
   DEFAULT_NETWORK,
-  ETHUUID,
+  PLQUUID,
   POLYGON_NETWORK,
   USDCPolygonUUID
 } from '@config';
@@ -151,7 +151,7 @@ export const MEMBERSHIP_CONFIG: IMembershipConfigObject = {
     description: '',
     icon: lifetimeIcon,
     price: '1',
-    assetUUID: ETHUUID,
+    assetUUID: PLQUUID,
     durationInDays: 36500,
     discountNotice: translateRaw('MEMBERSHIP_LIFETIME_DESC'),
     networkId: DEFAULT_NETWORK

@@ -1,6 +1,6 @@
 import { mockAppState, simpleRender } from 'test-utils';
 
-import { ETHUUID, Fiats } from '@config';
+import { PLQUUID, Fiats } from '@config';
 import { fAssets } from '@fixtures';
 import { translateRaw } from '@translations';
 import { bigify } from '@utils';
@@ -10,7 +10,7 @@ import { TxFeeValidation } from './TxFeeValidation';
 function getComponent(
   props: React.ComponentProps<typeof TxFeeValidation>,
   rates = {
-    [ETHUUID]: {
+    [PLQUUID]: {
       usd: 585
     }
   }
@@ -44,7 +44,7 @@ describe('TxFeeValidation', () => {
     const { getByText } = getComponent(
       { ...defaultProps, amount: '0.000002', gasPrice: '1000' },
       {
-        [ETHUUID]: {
+        [PLQUUID]: {
           usd: 100
         }
       }
@@ -56,7 +56,7 @@ describe('TxFeeValidation', () => {
     const { getByText } = getComponent(
       { ...defaultProps, amount: '100', gasPrice: '100' },
       {
-        [ETHUUID]: {
+        [PLQUUID]: {
           usd: 10000
         }
       }
@@ -68,7 +68,7 @@ describe('TxFeeValidation', () => {
     const { getByText } = getComponent(
       { ...defaultProps, amount: '100', gasPrice: '15000' },
       {
-        [ETHUUID]: {
+        [PLQUUID]: {
           usd: 200
         }
       }
@@ -80,7 +80,7 @@ describe('TxFeeValidation', () => {
     const { getByText } = getComponent(
       { ...defaultProps, amount: '100', gasPrice: '15000' },
       {
-        [ETHUUID]: {
+        [PLQUUID]: {
           usd: 1000
         }
       }

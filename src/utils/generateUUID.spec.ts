@@ -1,6 +1,6 @@
 import {
   DAIUUID,
-  ETHUUID,
+  PLQUUID,
   DEFAULT_NETWORK_CHAINID as networkChainId,
   DEFAULT_NETWORK as networkId
 } from '@config';
@@ -22,7 +22,7 @@ describe('it generates valid uuids deterministically from inputs', () => {
 
   it('generates a deterministic asset uuid for a base asset', () => {
     const actual = generateAssetUUID(networkChainId);
-    expect(actual).toEqual(ETHUUID);
+    expect(actual).toEqual(PLQUUID);
   });
 
   it('generates a deterministic address uuid', () => {

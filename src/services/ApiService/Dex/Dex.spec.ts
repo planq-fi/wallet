@@ -1,6 +1,6 @@
 import mockAxios from 'jest-mock-axios';
 
-import { ETHUUID } from '@config';
+import { PLQUUID } from '@config';
 import { fAccount, fAssets, fNetwork, fNetworks, fDAI, fSwapQuote } from '@fixtures';
 import { fetchUniversalGasPriceEstimate } from '@services/ApiService/Gas';
 import {
@@ -58,7 +58,7 @@ describe('SwapFlow', () => {
         to: '0xdef1c0ded9bec7f1a1670819833240f027b25eff',
         txType: 'SWAP',
         value: '0x0',
-        metadata: { receivingAsset: ETHUUID }
+        metadata: { receivingAsset: PLQUUID }
       });
     });
 
@@ -102,7 +102,7 @@ describe('SwapFlow', () => {
         txType: 'SWAP',
         type: 2,
         value: '0x0',
-        metadata: { receivingAsset: ETHUUID }
+        metadata: { receivingAsset: PLQUUID }
       });
     });
   });
@@ -117,7 +117,7 @@ describe('SwapFlow', () => {
           gas: { gasPrice: '154', maxFeePerGas: undefined, maxPriorityFeePerGas: undefined },
           network: { ...fNetworks[0], supportsEIP1559: false },
           account: fAccount,
-          buyToken: { name: 'Ethereum', ticker: 'ETH' as TTicker, uuid: ETHUUID as TUuid }
+          buyToken: { name: 'Ethereum', ticker: 'ETH' as TTicker, uuid: PLQUUID as TUuid }
         })
       ).toEqual({
         to: '0xA65440C4CC83D70b44cF244a0da5373acA16a9cb' as ITxToAddress,
@@ -126,7 +126,7 @@ describe('SwapFlow', () => {
         gasPrice: '0x23db1d8400' as ITxGasPrice,
         chainId: 1,
         txType: ITxType.SWAP,
-        metadata: { receivingAsset: ETHUUID }
+        metadata: { receivingAsset: PLQUUID }
       });
     });
   });

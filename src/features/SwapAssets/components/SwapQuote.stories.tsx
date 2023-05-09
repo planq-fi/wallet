@@ -1,6 +1,6 @@
 import { ComponentProps } from 'react';
 
-import { DAIUUID, DEX_TRADE_EXPIRATION, ETHUUID } from '@config';
+import { DAIUUID, DEX_TRADE_EXPIRATION, PLQUUID } from '@config';
 import { fAssets, fSettings } from '@fixtures';
 import { ISwapAsset, TTicker, TUuid } from '@types';
 import { bigify, noOp } from '@utils';
@@ -15,7 +15,7 @@ const DAI: ISwapAsset = {
 const ETH: ISwapAsset = {
   name: 'Ethereum',
   ticker: 'ETH' as TTicker,
-  uuid: ETHUUID as TUuid
+  uuid: PLQUUID as TUuid
 };
 const defaultProps = {
   exchangeRate: 123.123,

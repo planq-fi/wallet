@@ -1,7 +1,7 @@
 import { call } from 'redux-saga-test-plan/matchers';
 import { expectSaga, mockAppState } from 'test-utils';
 
-import { ETHUUID, REPV1UUID, REPV2UUID } from '@config';
+import { PLQUUID, REPV1UUID, REPV2UUID } from '@config';
 import { fAccounts, fAssets, fNetworks } from '@fixtures';
 import { Asset, TUuid } from '@types';
 import { bigify, bigify as mockBigify } from '@utils';
@@ -39,7 +39,7 @@ describe('scanTokensWorker()', () => {
           balance: '1000000000000000000'
         },
         {
-          uuid: ETHUUID as TUuid,
+          uuid: PLQUUID as TUuid,
           balance: '2000000000000000000'
         }
       ]
@@ -64,7 +64,7 @@ describe('scanTokensWorker()', () => {
           balance: '1000000000000000000'
         },
         {
-          uuid: ETHUUID as TUuid,
+          uuid: PLQUUID as TUuid,
           balance: '2000000000000000000'
         },
         fAccounts[0].assets[1]
@@ -105,7 +105,7 @@ describe('formatBalances()', () => {
           balance: '1000000000000000000'
         },
         {
-          uuid: ETHUUID as TUuid,
+          uuid: PLQUUID as TUuid,
           balance: '2000000000000000000'
         },
         fAccounts[0].assets[1]

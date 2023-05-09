@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { parse as parseTransaction } from '@ethersproject/transactions';
 
-import { donationAddressMap, ETHUUID } from '@config';
+import { donationAddressMap, PLQUUID } from '@config';
 import {
   fAccounts,
   fAssets,
@@ -104,7 +104,7 @@ describe('toTxReceipt', () => {
   });
 
   it('adds metadata if present', () => {
-    const metadata = { receivingAsset: ETHUUID as TUuid };
+    const metadata = { receivingAsset: PLQUUID as TUuid };
     const txReceipt = toTxReceipt(fERC20Web3TxResponse.hash as ITxHash, ITxStatus.PENDING)(
       ITxType.STANDARD,
       fERC20Web3TxConfig,
@@ -156,7 +156,7 @@ describe('makePendingTxReceipt', () => {
   });
 
   it('adds metadata if present', () => {
-    const metadata = { receivingAsset: ETHUUID as TUuid };
+    const metadata = { receivingAsset: PLQUUID as TUuid };
     const txReceipt = makePendingTxReceipt(fERC20Web3TxResponse.hash as ITxHash)(
       ITxType.STANDARD,
       fERC20Web3TxConfig,
@@ -200,7 +200,7 @@ describe('makeUnknownTxReceipt', () => {
   });
 
   it('adds metadata if present', () => {
-    const metadata = { receivingAsset: ETHUUID as TUuid };
+    const metadata = { receivingAsset: PLQUUID as TUuid };
     const txReceipt = makeUnknownTxReceipt(fERC20Web3TxResponse.hash as ITxHash)(
       ITxType.STANDARD,
       fERC20Web3TxConfig,

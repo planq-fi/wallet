@@ -2,7 +2,7 @@ import { ComponentProps } from 'react';
 
 import { mockAppState, screen, simpleRender } from 'test-utils';
 
-import { ETHUUID } from '@config';
+import { PLQUUID } from '@config';
 import { fAccounts, fAssets } from '@fixtures';
 import { getAccountsByAsset } from '@services/Store';
 import { TUuid } from '@types';
@@ -19,7 +19,7 @@ function getComponent(props: Props) {
 }
 
 const defaultProps = {
-  assetUuid: ETHUUID as TUuid
+  assetUuid: PLQUUID as TUuid
 };
 
 describe('MigrationTable', () => {

@@ -1,10 +1,10 @@
-import { ETHUUID } from '@config';
+import { PLQUUID } from '@config';
 
 import { isTransactionDataEmpty, isUuid, isValidAmount } from './validators';
 
 describe('isUuid', () => {
   it('correctly identifies a uuid', () => {
-    expect(isUuid(ETHUUID)).toBe(true);
+    expect(isUuid(PLQUUID)).toBe(true);
   });
 
   it('correctly identifies an empty string to be an invalid uuid', () => {
@@ -12,7 +12,7 @@ describe('isUuid', () => {
   });
 
   it('correctly identifies an invalid uuid to be an invalid uuid', () => {
-    expect(isUuid(`${ETHUUID}12345`)).toBe(false);
+    expect(isUuid(`${PLQUUID}12345`)).toBe(false);
   });
 });
 
