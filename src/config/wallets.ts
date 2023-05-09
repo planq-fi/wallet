@@ -2,6 +2,8 @@
 // component.
 import viewOnlyIcon from '@assets/images/icn-view-only.svg';
 import CoinbaseWalletIcon from '@assets/images/wallets/coinbase.svg';
+import KeplrWalletIcon from '@assets/images/wallets/keplr.svg';
+import LeapWalletIcon from '@assets/images/wallets/leap.svg';
 import FrameIcon from '@assets/images/wallets/frame.svg';
 import GridPlusSVG from '@assets/images/wallets/gridplus.svg';
 import LedgerSVG from '@assets/images/wallets/ledger.svg';
@@ -264,7 +266,7 @@ export const WALLETS_CONFIG: Record<WalletId, IWalletConfig> = {
     isDesktopOnly: false,
     type: WalletType.WEB3,
     lid: 'X_LEAP',
-    icon: CoinbaseWalletIcon,
+    icon: LeapWalletIcon,
     description: 'ADD_WEB3DESC',
     helpLink: getKBHelpArticle(MIGRATE_TO_METAMASK),
     install: {
@@ -284,7 +286,7 @@ export const WALLETS_CONFIG: Record<WalletId, IWalletConfig> = {
     isDesktopOnly: false,
     type: WalletType.WEB3,
     lid: 'X_KEPLR',
-    icon: CoinbaseWalletIcon,
+    icon: KeplrWalletIcon,
     description: 'ADD_WEB3DESC',
     helpLink: getKBHelpArticle(MIGRATE_TO_METAMASK),
     install: {

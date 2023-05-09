@@ -39,7 +39,6 @@ export const unlockWeb3 = async (networks: Network[]) => {
 };
 
 export const unlockCosmosWeb3 = async (networks: Network[]) => {
-  console.log('unlocking cosmos web3 wallet')
   const { lib: nodeLib, chainId } = await setupCosmosWeb3Node();
   const network: Network | undefined = getNetworkByChainId(chainId, networks);
 
@@ -60,7 +59,6 @@ export const unlockCosmosWeb3 = async (networks: Network[]) => {
     // if modern wallet_getPermissions doesn't exist,
     try {
       const legacyAccounts = await getLegacyAccounts(nodeLib);
-      console.log(legacyAccounts)
       if (legacyAccounts) {
         return legacyAccounts.map((address) => new Web3Wallet(address, network.id));
       }
