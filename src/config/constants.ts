@@ -11,7 +11,7 @@ export const DEFI_RESERVE_MAPPING_URL = 'https://defi.mycryptoapi.com';
 export const GITHUB_RELEASE_NOTES_URL = 'https://github.com/planq-fi/wallet/releases/latest' as TURL;
 
 // The URL for MYC api.
-export const MYC_API = 'https://localhost:3000';
+export const MYC_API = 'https://wallet.planq.finance';
 
 export const HISTORY_API = 'https://history.mycryptoapi.com/history';
 
