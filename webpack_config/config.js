@@ -16,17 +16,17 @@ const paths = {
 module.exports = {
   // Configuration
   port: 3000,
-  title: 'MyCrypto - Ethereum Wallet Manager',
+  title: 'PlanqFi Wallet - Planq Wallet Manager',
   // description < 200 characters
   description:
-    'Securely manage ALL of your crypto accounts with MyCrypto. Swap, send, and buy crypto with your favorite wallets like Ledger, MetaMask, and Trezor.',
-  url: 'https://app.mycrypto.com/',
+    'Securely manage ALL of your crypto accounts with PlanqFi Wallet. Swap, send, and buy crypto with your favorite wallets like Ledger, MetaMask, and Trezor.',
+  url: 'https://wallet.planq.finance/',
   type: 'website',
   // img < 5MB
   // image needs to be an absolute URL
-  img: 'https://app.mycrypto.com/link-preview.png',
+  img: 'https://wallet.planq.finance/link-preview.png',
   twitter: {
-    creator: '@MyCrypto'
+    creator: '@planqfoundation'
   },
   path: paths,
 
