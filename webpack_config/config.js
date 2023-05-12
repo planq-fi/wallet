@@ -19,7 +19,7 @@ module.exports = {
   title: 'PlanqFi Wallet - Planq Wallet Manager',
   // description < 200 characters
   description:
-    'Securely manage ALL of your crypto accounts with PlanqFi Wallet. Swap, send, and buy crypto with your favorite wallets like Ledger, MetaMask, and Trezor.',
+    'Securely manage ALL of your crypto accounts with PlanqFi Wallet. Swap, send, and buy crypto with your favorite wallets like Leap Wallet, Ledger, MetaMask, and Trezor.',
   url: 'https://wallet.planq.finance/',
   type: 'website',
   // img < 5MB
