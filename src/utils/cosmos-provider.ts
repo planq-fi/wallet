@@ -1,6 +1,5 @@
-import { JsonRpcFetchFunc, JsonRpcProvider, Web3Provider } from '@ethersproject/providers'
+import { JsonRpcFetchFunc, JsonRpcProvider } from '@ethersproject/providers'
 import { planqToEth } from './bech32-utils'
-import { BigNumber } from "@ethersproject/bignumber";
 import { VoidSigner } from '@ethersproject/abstract-signer'
 import { ExternalProvider } from "@ethersproject/providers/src.ts/web3-provider";
 import {Deferrable, resolveProperties, shallowCopy} from "@ethersproject/properties";
@@ -229,15 +228,19 @@ export class KeplrSigner extends VoidSigner {
   }
 }
 
-export class LeapProvider extends Web3Provider {
+export class LeapProvider extends JsonRpcProvider {
   leapAvailable = false
   chainId = 'planq_7070-2'
   leapSigner = null
+  readonly provider: ExternalProvider;
   readonly jsonRpcFetchFunc: JsonRpcFetchFunc;
+  permissions = null
   constructor(url, network, chainId, overrideMetamask) {
     super(url, network)
     this.jsonRpcFetchFunc = this.send
     this.chainId = chainId
+    this.provider = null
+    this.permissions = []
     // @ts-ignore
     if (window.leap) {
       this.leapAvailable = true
@@ -271,22 +274,33 @@ export class LeapProvider extends Web3Provider {
     return accounts[0].address
   }
 
-  async getAccounts() {
+  async listAccounts(): Promise<Array<string>> {
+    return this.getAccounts()
+  }
+  async getAccounts(): Promise<Array<string>> {
     // @ts-ignore
     const offlineSigner = window.leap.getOfflineSigner(this.chainId)
     const accounts = await offlineSigner.getAccounts()
-    return { 0: planqToEth(accounts[0].address) }
+    const resp = []
+    resp[0] = planqToEth(accounts[0].address)
+    return resp
   }
 
-  // Compatibility for window.ethereum.request - only used if MetaMask is not available
-  async request(req) {
-    switch (req.method) {
+  async send(method: string, params: Array<any>): Promise<any> {
+    switch (method) {
+      case 'wallet_getPermissions':
+        return undefined
+      case 'eth_accounts':
+        return this.getAccounts()
       case 'eth_requestAccounts':
         return this.getAccounts()
+      case 'wallet_requestPermissions':
+        return undefined
       default:
-        return this.send(req.method, req.params)
+        return super.send(method, params)
     }
-    return this.send(req.method, req.params)
+    return super.send(method, params)
+
   }
 
   // @ts-ignore
@@ -356,7 +370,7 @@ export class LeapSigner extends VoidSigner {
   }
   async signTransaction(transaction) {
     const account = await this.leapInstance.getAccountsBech32()
-    transaction.gasLimit = transaction.gasLimit.mul(BigNumber.from(2))
+
     // @ts-ignore
     return await window.leap.signEthereum(
       this.leapInstance.chainId,
@@ -364,6 +378,63 @@ export class LeapSigner extends VoidSigner {
       JSON.stringify(transaction),
       'transaction',
     )
+  }
+
+  async sendUncheckedTransaction(transaction: Deferrable<TransactionRequest>): Promise<string> {
+    transaction = shallowCopy(transaction);
+
+    const fromAddress = this.getAddress().then((address) => {
+      if (address) { address = address.toLowerCase(); }
+      return address;
+    });
+
+    // The JSON-RPC for eth_sendTransaction uses 90000 gas; if the user
+    // wishes to use this, it is easy to specify explicitly, otherwise
+    // we look it up for them.
+    if (transaction.gasLimit == null) {
+      const estimate = shallowCopy(transaction);
+      estimate.from = fromAddress;
+      transaction.gasLimit = this.provider.estimateGas(estimate);
+    }
+
+    if (transaction.to != null) {
+      transaction.to = Promise.resolve(transaction.to).then(async (to) => {
+        if (to == null) { return null; }
+        const address = await this.provider.resolveName(to);
+        if (address == null) {
+          new Error("provided ENS name resolves to null tx.to" + to);
+        }
+        return address;
+      });
+    }
+
+    return resolveProperties({
+      tx: resolveProperties(transaction),
+      sender: fromAddress
+    }).then(async ({tx, sender}) => {
+
+      if (tx.from != null) {
+        if (tx.from.toLowerCase() !== sender) {
+          new Error("from address mismatch transaction" + transaction);
+        }
+      } else {
+        tx.from = sender;
+      }
+      const signedTx = await this.signTransaction(tx)
+
+      // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+      const hexTx = hexlify(signedTx);
+
+      return this.leapInstance.send("eth_sendRawTransaction", [hexTx]).then((hash) => {
+        return hash;
+      }, (error) => {
+        new Error("sendTransaction" + error + " " + hexTx);
+      });
+    });
+  }
+
+  async getAddress() {
+    return this.address;
   }
 
   async signMessage(message) {
