@@ -121,16 +121,6 @@ export default function OnboardingResponsibleNotification() {
           </TipIconWrapper>
           <TipText>{translate('NOTIFICATIONS_ONBOARDING_RESPONSIBLE_JSON')}</TipText>
         </TipItem>
-        <TipItem>
-          <TipIconWrapper>
-            <TipIcon width={50} height={40} src={myCryptoIcon} />
-          </TipIconWrapper>
-          <TipText>
-            {translate('NOTIFICATIONS_ONBOARDING_RESPONSIBLE_MYCRYPTO', {
-              $link: DOWNLOAD_MYCRYPTO_LINK
-            })}
-          </TipText>
-        </TipItem>
       </Content>
     </NotificationWrapper>
   );
