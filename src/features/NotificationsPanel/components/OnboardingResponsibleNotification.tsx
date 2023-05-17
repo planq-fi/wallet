@@ -3,9 +3,8 @@ import styled from 'styled-components';
 
 import jsonIcon from '@assets/images/onboarding/icn-json.svg';
 import privateIcon from '@assets/images/onboarding/icn-key-mnemonic.svg';
-import myCryptoIcon from '@assets/images/onboarding/icn-mnycrpto-app.svg';
 import phishingIcon from '@assets/images/onboarding/icn-phishing.svg';
-import { CRYPTOSCAMDB, DOWNLOAD_MYCRYPTO_LINK, getKBHelpArticle, KB_HELP_ARTICLE } from '@config';
+import { CRYPTOSCAMDB, getKBHelpArticle, KB_HELP_ARTICLE } from '@config';
 import { BREAK_POINTS, COLORS } from '@theme';
 import translate, { translateRaw } from '@translations';
 
