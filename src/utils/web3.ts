@@ -13,9 +13,9 @@ export function getWeb3Config(): IWalletConfig {
   const provider =
     (window as CustomWindow).ethereum || (window as CustomWindow).web3.currentProvider;
 
-  if (typeof (window as CustomWindow).leap !== 'undefined') return WALLETS_CONFIG.LEAP;
-
   if (typeof (window as CustomWindow).keplr !== 'undefined') return WALLETS_CONFIG.KEPLR;
+
+  if (typeof (window as CustomWindow).leap !== 'undefined') return WALLETS_CONFIG.LEAP;
 
   if (provider.isMetaMask) return WALLETS_CONFIG.METAMASK;
 
