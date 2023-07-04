@@ -3,6 +3,7 @@ import { planqToEth } from './bech32-utils'
 import { VoidSigner } from '@ethersproject/abstract-signer'
 import { ExternalProvider } from "@ethersproject/providers/src.ts/web3-provider";
 import {Deferrable, resolveProperties, shallowCopy} from "@ethersproject/properties";
+import {serialize} from "@ethersproject/transactions"
 import {TransactionRequest} from "@ethersproject/abstract-provider";
 import {hexlify} from "@ethersproject/bytes";
 
@@ -152,12 +153,13 @@ export class KeplrSigner extends VoidSigner {
     const account = await this.keplrInstance.getAccountsBech32()
 
     // @ts-ignore
-    return await window.keplr.signEthereum(
+    const signature = await window.keplr.signEthereum(
       this.keplrInstance.chainId,
       account,
       JSON.stringify(transaction),
       'transaction',
     )
+    return serialize(transaction, signature)
   }
 
   async sendUncheckedTransaction(transaction: Deferrable<TransactionRequest>): Promise<string> {
@@ -372,12 +374,13 @@ export class LeapSigner extends VoidSigner {
     const account = await this.leapInstance.getAccountsBech32()
 
     // @ts-ignore
-    return await window.leap.signEthereum(
+    const signature =  await window.leap.signEthereum(
       this.leapInstance.chainId,
       account,
       JSON.stringify(transaction),
       'transaction',
     )
+    return serialize(transaction, signature)
   }
 
   async sendUncheckedTransaction(transaction: Deferrable<TransactionRequest>): Promise<string> {
