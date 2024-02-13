@@ -14,6 +14,7 @@ export async function getChainIdAndLib() {
     const lib = new LeapProvider('https://evm-rpc.planq.network:443', {
       chainId: 7070,
       name: 'Planq',
+      ensAddress: '0x451098F7c22b7404450293D82853596052D79FaF',
     }, 'planq_7070-2', true);
     await lib.checkNetwork()
     const network = await lib.getNetwork();
@@ -23,6 +24,7 @@ export async function getChainIdAndLib() {
     const lib = new KeplrProvider("https://evm-rpc.planq.network:443", {
       chainId: 7070,
       name: 'Planq',
+      ensAddress: '0x451098F7c22b7404450293D82853596052D79FaF',
     }, "planq_7070-2", true);
     await lib.checkNetwork()
     const network = await lib.getNetwork();
